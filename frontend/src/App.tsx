@@ -18,11 +18,12 @@ type ActiveTab = 'workspace' | 'benchmarks' | 'operations';
 export function App() {
   // Initialize with a valid in-memory JWT token so the default Support Workspace is immediately live,
   // while supporting full Sign Out -> Authentication View -> Sign In JWT flow.
-  const [jwtToken, setJwtToken] = useState<string | null>(() => {
-    const initialToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlbmctb3BzQHRlY2htYXJ0LmludGVybmFsIn0.tm_v14';
-    apiClient.setToken(initialToken);
-    return initialToken;
-  });
+  const [jwtToken, setJwtToken] = useState<string | null>(null); 
+  // const [jwtToken, setJwtToken] = useState<string | null>(() => {
+  //   const initialToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJlbmctb3BzQHRlY2htYXJ0LmludGVybmFsIn0.tm_v14';
+  //   apiClient.setToken(initialToken);
+  //   return initialToken;
+  // });
 
   const [userProfile, setUserProfile] = useState({
     name: 'Engineering Ops',
