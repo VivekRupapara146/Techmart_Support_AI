@@ -1,6 +1,6 @@
 # TechMart Support — Multi-Agent RAG Customer Support System
 
-[![CI](https://github.com/<YOUR_GH_ORG>/<YOUR_REPO>/actions/workflows/ci.yml/badge.svg)](https://github.com/<YOUR_GH_ORG>/<YOUR_REPO>/actions/workflows/ci.yml)
+[![CI](https://github.com/VivekRupapara146/Techmart_Support_AI/actions/workflows/ci.yml/badge.svg)](https://github.com/VivekRupapara146/Techmart_Support_AI/actions/workflows/ci.yml)
 
 A multi-agent, RAG-grounded customer support system for a fictional
 electronics retailer — built to demonstrate real architectural
@@ -8,9 +8,17 @@ decision-making (routing strategy tradeoffs, grounding/refusal behavior,
 reliability under failure, measured evaluation) rather than just wiring an
 LLM to a chat box.
 
-> **Live demo:** _not currently deployed — see [`DEPLOYMENT.md`](DEPLOYMENT.md)
-> to spin it up on AWS App Runner or Render in a few minutes. This line
-> gets a real link once it's up; a 30-second demo GIF goes here too._
+> 🌐 **Live Demo:** [https://techmart-support-frontend-1qiy.onrender.com/](https://techmart-support-frontend-1qiy.onrender.com/)  
+> 🎬 **Video Walkthrough (2:28 min):** [Watch the Full Walkthrough on YouTube](https://youtu.be/10hscH7IV8M)
+
+---
+## UI & System Walkthrough
+
+[![TechMart Support Demo Video](https://img.shields.io/badge/YouTube-Watch%20Demo%20Walkthrough%20(2m28s)-red?style=for-the-badge&logo=youtube)](https://youtu.be/10hscH7IV8M)
+
+| Login Screen | Support Workspace & Grounded Evidence |
+| :---: | :---: |
+| ![Login Screen](docs/screenshots/login.png) | ![Workspace Screen](docs/screenshots/workspace.png) |
 
 ## Architecture
 
@@ -55,6 +63,7 @@ can never drift apart in behavior — see
 .
 ├── backend/              FastAPI + RAG pipeline + 3 interchangeable routers
 ├── frontend/              React + TypeScript + Tailwind (Vite)
+├── docs/screenshots/     Visual assets and interface screenshots
 ├── docker-compose.yml     API + local MongoDB, one command
 ├── render.yaml             Render Blueprint (fallback deploy target)
 ├── DEPLOYMENT.md           AWS App Runner (primary) + Render (fallback) + local Docker
@@ -163,7 +172,7 @@ what they do and don't measure):
 ## Deployment
 
 See [`DEPLOYMENT.md`](DEPLOYMENT.md): AWS App Runner (primary target, with
-real cost disclosed), Render (free fallback), and local Docker Compose.
+real cost disclosed), Render (active deployment target), and local Docker Compose.
 
 ## Tests
 
