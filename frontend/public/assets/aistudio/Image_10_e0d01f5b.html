@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechMart Support AI - Support Workspace</title>
+<!-- Inter Google Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#0b1c30",
+            "tertiary": "#005338",
+            "tertiary-fixed": "#6ffbbe",
+            "on-surface": "#0b1c30",
+            "surface-container-highest": "#d3e4fe",
+            "on-secondary-fixed-variant": "#004395",
+            "on-tertiary-container": "#67f4b7",
+            "surface-container": "#e5eeff",
+            "background": "#f8f9ff",
+            "on-error": "#ffffff",
+            "primary": "#3525cd",
+            "tertiary-fixed-dim": "#4edea3",
+            "secondary-container": "#2170e4",
+            "surface-container-high": "#dce9ff",
+            "error": "#ba1a1a",
+            "surface-dim": "#cbdbf5",
+            "on-surface-variant": "#464555",
+            "outline": "#777587",
+            "inverse-primary": "#c3c0ff",
+            "on-secondary-container": "#fefcff",
+            "inverse-surface": "#213145",
+            "primary-fixed": "#e2dfff",
+            "on-error-container": "#93000a",
+            "surface-variant": "#d3e4fe",
+            "secondary-fixed-dim": "#adc6ff",
+            "secondary": "#0058be",
+            "primary-fixed-dim": "#c3c0ff",
+            "outline-variant": "#c7c4d8",
+            "on-primary-fixed-variant": "#3323cc",
+            "surface-tint": "#4d44e3",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#002113",
+            "surface-container-low": "#eff4ff",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#006e4b",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#dad7ff",
+            "on-secondary": "#ffffff",
+            "surface": "#f8f9ff",
+            "primary-container": "#4f46e5",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-primary-fixed": "#0f0069",
+            "surface-bright": "#f8f9ff",
+            "secondary-fixed": "#d8e2ff",
+            "surface-container-lowest": "#ffffff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-secondary-fixed": "#001a42"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "margin-lg": "2rem",
+            "gutter-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "margin-md": "1.5rem",
+            "space-xl": "2rem"
+          },
+          "fontFamily": {
+            "title-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "display": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "title-md": ["Inter"],
+            "headline-lg": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c7c4d8;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #777587;
+    }
+  </style>
+</head>
+<body class="h-full overflow-hidden bg-background font-body-md text-on-surface antialiased flex">
+<!-- ======================================================== -->
+<!-- MASTER NAVIGATION SHELL: SideNavBar                      -->
+<!-- ======================================================== -->
+<aside class="fixed top-0 bottom-0 left-0 w-60 h-screen flex flex-col justify-between p-4 z-40 bg-surface-container-lowest border-r border-outline-variant shadow-none select-none">
+<!-- Top Branding & Navigation -->
+<div class="flex flex-col gap-6">
+<!-- Brand Logo Header -->
+<div class="flex items-center gap-3 px-1 py-1">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center border border-outline-variant/60 overflow-hidden shrink-0">
+<img alt="TechMart Support AI Logo symbol" class="w-7 h-7 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WN40CFvk8Xoc0rvgWIFtc2jn3V0iaQxf4Yu8wYIvb5TO-y9UobXEuQ71NJLXVlSI2m1EHKqzsH2chFQoRxQ-JsAPJFqt4ksunjSLVC7IgYqFCtgtKtK2pu1xT3w40FEtk8O5So0spZp_v1X82mBeWEt5LH4cJ81NyMfKlCb6W1ao_5TByWoijRLSoaNFPQkuCuzSQLgPtsONhiotVROREFQdf7AchO3AmRVfF9HwBcgJPRSoBLQb-IQk4"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md font-semibold text-on-surface truncate leading-tight">TechMart Support AI</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Intelligent Support. Grounded Answers.</span>
+</div>
+</div>
+<!-- Navigation Tabs Array -->
+<nav class="flex flex-col gap-1">
+<!-- Active: Support Workspace -->
+<a class="flex items-center gap-3 px-3 py-2 text-primary bg-surface-container-low font-title-sm text-title-sm rounded-lg border-l-2 border-primary transition-all duration-150 ease-in-out" href="#">
+<span class="material-symbols-outlined text-primary" data-icon="support_agent" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span>Support Workspace</span>
+</a>
+<!-- Inactive: RAG & Router Benchmarks -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md rounded-lg hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span>RAG &amp; Router Benchmarks</span>
+</a>
+<!-- Inactive: Reliability & Operations -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md rounded-lg hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span>Reliability &amp; Operations</span>
+</a>
+<!-- Inactive: Settings -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-body-md text-body-md rounded-lg hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom User Section: Engineering Ops -->
+<div class="border-t border-outline-variant/50 pt-3">
+<div class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-title-sm text-title-sm font-semibold shrink-0">
+            EO
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Engineering Ops</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">eng-ops@techmart.internal</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded transition-colors" title="Logout">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- ======================================================== -->
+<!-- MAIN WORKSPACE STAGE                                     -->
+<!-- ======================================================== -->
+<div class="pl-60 w-full flex flex-col h-screen overflow-hidden">
+<!-- MASTER NAVIGATION SHELL: TopNavBar -->
+<header class="h-14 flex items-center justify-between px-6 w-full bg-surface-container-lowest border-b border-outline-variant shadow-none shrink-0 z-30">
+<!-- Breadcrumbs Path -->
+<div class="flex items-center gap-2 font-title-sm text-title-sm">
+<span class="text-on-surface-variant font-medium">TechMart Support AI</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface-variant font-medium">Workspace</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold flex items-center gap-1.5">
+          Active Session #sess-8941
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+</span>
+</div>
+<!-- Trailing Action Badges & Tools -->
+<div class="flex items-center gap-3">
+<!-- Live Status Pill -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-[#10B981] animate-pulse"></span>
+<span class="font-medium">System Operational</span>
+</div>
+<!-- Version Badge -->
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold border border-outline-variant/60">
+          /v1
+        </span>
+<div class="h-4 w-px bg-outline-variant mx-1"></div>
+<!-- Trailing Action Icons -->
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors" title="Documentation">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded-lg transition-colors relative" title="Notifications">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- ======================================================== -->
+<!-- 3-COLUMN SEAMLESS SPLIT CANVAS (25% / 50% / 25%)         -->
+<!-- ======================================================== -->
+<main class="flex-1 flex overflow-hidden bg-background">
+<!-- ==================================================== -->
+<!-- COLUMN 1: Conversation History (25% width / ~320px)   -->
+<!-- ==================================================== -->
+<section class="w-1/4 min-w-[280px] max-w-[340px] h-full flex flex-col bg-surface-container-lowest border-r border-outline-variant">
+<!-- Top Action Bar & Search -->
+<div class="p-3.5 border-b border-outline-variant/70 flex flex-col gap-2.5">
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary font-title-sm text-title-sm py-2 px-3 rounded-lg flex items-center justify-center gap-2 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+<span>New Conversation</span>
+</button>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-on-surface-variant text-[16px]" data-icon="search">search</span>
+<input class="w-full pl-8 pr-11 py-1.5 bg-surface-container-lowest border border-outline-variant/80 rounded-lg text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all" placeholder="Search sessions..." type="text"/>
+<kbd class="absolute right-2 top-2 px-1.5 py-0.5 rounded bg-surface-container-high border border-outline-variant text-[10px] text-on-surface-variant font-mono font-medium">⌘K</kbd>
+</div>
+<!-- Filter Chips -->
+<div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pt-1 pb-0.5">
+<button class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary text-label-sm font-label-sm shrink-0 font-medium shadow-xs">
+              All
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/60 text-label-sm font-label-sm shrink-0 transition-colors">
+              Billing
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/60 text-label-sm font-label-sm shrink-0 transition-colors">
+              Returns
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/60 text-label-sm font-label-sm shrink-0 transition-colors">
+              Technical
+            </button>
+</div>
+</div>
+<!-- Scrollable Thread List -->
+<div class="flex-1 overflow-y-auto custom-scrollbar divide-y divide-outline-variant/40">
+<!-- Item 1: Active (#sess-8941) -->
+<div class="p-3.5 bg-surface-container-low/70 border-l-4 border-primary cursor-pointer transition-colors relative">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface truncate">Marcus Vance</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">5m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2 leading-snug">
+              Looking to return unopened VR headset after 45 days...
+            </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary border border-primary/20">
+                  Enterprise
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 msgs</span>
+</div>
+<span class="flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+                Active
+              </span>
+</div>
+</div>
+<!-- Item 2: Inactive (#sess-8938) -->
+<div class="p-3.5 hover:bg-surface-container-lowest hover:bg-surface-container-low/40 cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Elena Rostova</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">18m ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mb-2">
+              Invoice mismatch on order #TM-9921...
+            </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+                  Billing
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 msgs</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+<!-- Item 3: Inactive (#sess-8930) -->
+<div class="p-3.5 hover:bg-surface-container-low/40 cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm text-on-surface truncate">David Chen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">1h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mb-2">
+              GPU firmware update bricked PCIe slot 2...
+            </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-on-surface-variant border border-outline-variant/60">
+                  Technical
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">6 msgs</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+<!-- Item 4: Inactive (#sess-8924) -->
+<div class="p-3.5 hover:bg-surface-container-low/40 cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Sophia Al-Mansoor</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">3h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mb-2">
+              Bulk discount tier qualification inquiry...
+            </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container text-primary border border-primary/20">
+                  Enterprise
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">3 msgs</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+<!-- Item 5: Inactive (#sess-8919) -->
+<div class="p-3.5 hover:bg-surface-container-low/40 cursor-pointer transition-colors">
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Liam O'Connor</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant shrink-0">5h ago</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mb-2">
+              Tracking status stuck in label created...
+            </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-surface-container-high text-on-surface-variant border border-outline-variant/60">
+                  Returns
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1 msg</span>
+</div>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================================================== -->
+<!-- COLUMN 2: Active Chat Canvas (50% width / center)     -->
+<!-- ==================================================== -->
+<section class="w-1/2 flex-1 h-full flex flex-col bg-surface border-r border-outline-variant relative">
+<!-- Chat Canvas Header -->
+<div class="h-14 px-5 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between shrink-0 shadow-xs">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h1 class="font-title-md text-title-md text-on-surface truncate">#sess-8941 · Marcus Vance</h1>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Enterprise</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/50">Web Widget</span>
+</div>
+</div>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm rounded-lg transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="delete_sweep">delete_sweep</span>
+<span>Clear</span>
+</button>
+<button class="px-2.5 py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low font-body-sm text-body-sm rounded-lg transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]" data-icon="file_download">file_download</span>
+<span>Export Trace</span>
+</button>
+<button class="px-3 py-1.5 border border-outline-variant hover:bg-surface-container-low text-on-surface font-title-sm text-title-sm rounded-lg transition-colors flex items-center gap-1.5 shadow-xs">
+<span class="material-symbols-outlined text-primary text-[16px]" data-icon="person_add">person_add</span>
+<span>Human Takeover</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Conversation Stream -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-6">
+<!-- 1. User Message (Right-aligned) -->
+<div class="flex flex-col items-end">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl rounded-tr-none px-4 py-3 max-w-lg shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed">
+                Hello, I purchased the Apex VR Headset Bundle 42 days ago. The product page said 30-day return policy, but is there an exception if it is still unopened in factory seal?
+              </p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 mr-1">
+              10:24 AM · Marcus Vance
+            </span>
+</div>
+<!-- 2. Assistant Message - Standard Grounded State (Left-aligned) -->
+<div class="flex flex-col items-start max-w-xl">
+<!-- Grounded Answer Block Style -->
+<div class="w-full bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-4 border-l-4 border-l-primary">
+<!-- Meta Header -->
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-outline-variant/50">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="smart_toy">smart_toy</span>
+</div>
+<span class="font-title-sm text-title-sm text-on-surface">TechMart Support AI</span>
+<span class="bg-[#EFF6FF] text-[#1E40AF] text-[11px] px-2 py-0.5 rounded-full font-medium border border-[#BFDBFE]">
+                    Routed to: Returns Specialist
+                  </span>
+</div>
+<!-- Grounded Confidence -->
+<div class="flex items-center gap-1 text-[#065F46] font-label-sm text-label-sm bg-[#ECFDF5] px-2 py-0.5 rounded-md border border-[#A7F3D0]">
+<span class="material-symbols-outlined text-[14px] text-[#10B981]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Grounded (99.4%)</span>
+</div>
+</div>
+<!-- Answer Body -->
+<div class="font-body-md text-body-md text-on-surface space-y-2 mb-4 leading-relaxed">
+<p>
+                  Under standard TechMart terms, returns beyond 30 days are generally ineligible.
+                </p>
+<p>
+                  However, under <strong>TechMart Extended Warranty &amp; Unopened Merchandise Exception Policy (§4.2)</strong>, unopened hardware in original factory seal can be returned up to <strong>45 days</strong> for store credit or exchange with zero restocking fee.
+                </p>
+</div>
+<!-- Retrieved Evidence Accordion -->
+<div class="bg-surface-container-low rounded-lg border border-outline-variant/60 p-3 mb-3">
+<div class="flex items-center justify-between font-label-md text-label-md font-semibold text-on-surface mb-2">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[15px]" data-icon="library_books">library_books</span>
+                    Retrieved Evidence (2 chunks)
+                  </span>
+<span class="text-on-surface-variant font-mono text-[11px]">Cosine Cos &gt; 0.88</span>
+</div>
+<div class="space-y-2 text-body-sm font-body-sm">
+<!-- Chunk 1 -->
+<div class="bg-surface-container-lowest p-2 rounded border border-outline-variant/40">
+<div class="flex items-center justify-between text-on-surface-variant font-mono text-[11px] mb-1">
+<span class="text-primary font-medium">[KB-RET-104 · §4.2 Exceptions]</span>
+<span class="text-[#065F46] font-semibold">Similarity: 0.94</span>
+</div>
+<p class="text-on-surface text-[12px] italic">
+                      "Unopened hardware in intact factory shrink-wrap qualifies for an extended 45-day RMA exchange window..."
+                    </p>
+</div>
+<!-- Chunk 2 -->
+<div class="bg-surface-container-lowest p-2 rounded border border-outline-variant/40">
+<div class="flex items-center justify-between text-on-surface-variant font-mono text-[11px] mb-1">
+<span class="text-primary font-medium">[KB-RET-012 · Hardware Returns]</span>
+<span class="text-[#065F46] font-semibold">Similarity: 0.89</span>
+</div>
+<p class="text-on-surface text-[12px] italic">
+                      "Standard consumer return window is 30 days post-delivery. Store credit offered for days 31-45 upon serial verification."
+                    </p>
+</div>
+</div>
+</div>
+<!-- Footer Micro Actions -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1">
+<button class="p-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded transition-colors" title="Helpful">
+<span class="material-symbols-outlined text-[15px]" data-icon="thumb_up">thumb_up</span>
+</button>
+<button class="p-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded transition-colors" title="Not Helpful">
+<span class="material-symbols-outlined text-[15px]" data-icon="thumb_down">thumb_down</span>
+</button>
+<div class="h-3 w-px bg-outline-variant/60 mx-1"></div>
+<button class="text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-1 px-1.5 py-0.5 rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_copy">content_copy</span>
+<span>Copy Citation</span>
+</button>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Model: gpt-4o-grounded</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 ml-1">10:24 AM · TechMart Support AI</span>
+</div>
+<!-- 3. User Message (Right-aligned) -->
+<div class="flex flex-col items-end">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-2xl rounded-tr-none px-4 py-3 max-w-lg shadow-sm">
+<p class="font-body-md text-body-md leading-relaxed">
+                Great, can you also provide an authorized override code for a refund directly back to my corporate Amex card?
+              </p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 mr-1">
+              10:26 AM · Marcus Vance
+            </span>
+</div>
+<!-- 4. Assistant Message - Uncertainty / Refusal State (Left-aligned) -->
+<div class="flex flex-col items-start max-w-xl">
+<div class="w-full bg-[#FFFBEB]/60 rounded-xl border border-[#FDE68A] shadow-sm p-4 border-l-4 border-l-[#D97706]">
+<!-- Header -->
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-[#FDE68A]/70">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-md bg-[#FEF3C7] text-[#92400E] flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="warning">warning</span>
+</div>
+<span class="font-title-sm text-title-sm text-[#92400E]">Autonomous Boundary Alert</span>
+<span class="bg-[#FFFBEB] text-[#92400E] text-[11px] px-2 py-0.5 rounded-full font-medium border border-[#FDE68A]">
+                    Threshold Triggered (&lt;75%)
+                  </span>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-[#FEF3C7] text-[#92400E]">
+                  Refusal &amp; Escalation
+                </span>
+</div>
+<!-- Body -->
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-3">
+                This request is outside authorized autonomous knowledge base bounds. AI models cannot issue financial overrides to corporate payment methods without Tier-2 manager authorization. I have initiated an automated ticket escalation.
+              </p>
+<!-- Escalation Card -->
+<div class="bg-surface-container-lowest rounded-lg border border-[#FDE68A] p-3 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface font-title-sm text-title-sm">
+<span class="material-symbols-outlined text-[#D97706] text-[16px]" data-icon="confirmation_number">confirmation_number</span>
+<span>Ticket #ESC-4029 dispatched to Returns Management Queue</span>
+</div>
+<span class="font-label-sm text-label-sm text-[#92400E] font-medium">Assigned SLA: &lt; 15 mins</span>
+</div>
+<div class="flex items-center justify-end pt-1">
+<button class="bg-[#D97706] hover:bg-[#B45309] text-white font-title-sm text-title-sm px-3 py-1.5 rounded-lg flex items-center gap-1.5 shadow-xs transition-colors">
+<span class="material-symbols-outlined text-[15px]" data-icon="support_agent">support_agent</span>
+<span>Escalate to Human Agent Now</span>
+</button>
+</div>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 ml-1">10:26 AM · TechMart Guardrails</span>
+</div>
+</div>
+<!-- Floating Input Bar Area -->
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant shrink-0">
+<div class="flex flex-col gap-2">
+<!-- Quick Suggestion Pills -->
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Suggested Prompts:</span>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant text-label-sm font-label-sm border border-outline-variant/60 transition-colors">
+                Check RMA policy
+              </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant text-label-sm font-label-sm border border-outline-variant/60 transition-colors">
+                Calculate restocking fee
+              </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant text-label-sm font-label-sm border border-outline-variant/60 transition-colors">
+                Request Manager Bypass
+              </button>
+</div>
+<!-- Main Input Box -->
+<div class="relative bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all p-2">
+<textarea class="w-full bg-transparent border-0 text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant focus:ring-0 p-1 resize-none" placeholder="Ask a customer support question or test prompt..." rows="2"></textarea>
+<div class="flex items-center justify-between pt-1 border-t border-outline-variant/40 mt-1">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<button class="p-1 hover:text-on-surface hover:bg-surface-container-low rounded transition-colors" title="Attach Policy">
+<span class="material-symbols-outlined text-[16px]" data-icon="attach_file">attach_file</span>
+</button>
+<button class="p-1 hover:text-on-surface hover:bg-surface-container-low rounded transition-colors" title="Knowledge Base Picker">
+<span class="material-symbols-outlined text-[16px]" data-icon="dataset">dataset</span>
+</button>
+<span class="font-label-sm text-label-sm text-outline">Press Enter ↵ to send</span>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-on-primary font-title-sm text-title-sm px-3.5 py-1.5 rounded-lg flex items-center gap-1.5 shadow-sm transition-colors">
+<span>Send</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================================================== -->
+<!-- COLUMN 3: Live Execution & Telemetry (25% width)      -->
+<!-- ==================================================== -->
+<section class="w-1/4 min-w-[280px] max-w-[340px] h-full flex flex-col bg-surface-container-low/50 overflow-hidden">
+<!-- Header -->
+<div class="h-14 px-4 bg-surface-container-lowest border-b border-outline-variant flex items-center justify-between shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="schema">schema</span>
+<h2 class="font-title-sm text-title-sm font-semibold text-on-surface">Execution Pipeline</h2>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-mono font-medium text-[11px] border border-outline-variant/60">
+              #tr-8941-b
+            </span>
+<button class="p-1 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low rounded transition-colors" title="Refresh Trace">
+<span class="material-symbols-outlined text-[16px]" data-icon="refresh">refresh</span>
+</button>
+</div>
+</div>
+<!-- Pipeline Execution Flow (Vertical timeline) -->
+<div class="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-3">
+<div class="font-label-sm text-label-sm font-semibold uppercase text-on-surface-variant tracking-wider">
+            Trace Nodes &amp; Latencies
+          </div>
+<!-- Flow Container -->
+<div class="relative pl-4 space-y-3 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant/60">
+<!-- Stage 1 -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border border-outline-variant shadow-xs">
+<div class="absolute -left-[21px] top-3.5 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background"></div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-medium text-on-surface">1. Query Received</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">14ms</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Sanitized &amp; tokenized query payload. Safety filter passed.
+              </p>
+<div class="mt-2 flex items-center gap-1 text-[11px] font-semibold text-[#065F46]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                Status: Complete
+              </div>
+</div>
+<!-- Stage 2 -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border border-outline-variant shadow-xs">
+<div class="absolute -left-[21px] top-3.5 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background"></div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-medium text-on-surface">2. Router Classification</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">38ms</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">
+                TF-IDF + Logistic: 94% confidence.
+              </p>
+<div class="p-1.5 rounded bg-surface-container text-[11px] font-mono text-on-surface-variant space-y-0.5">
+<div>Route: <span class="text-primary font-semibold">Returns Specialist</span></div>
+<div>Model: <span class="font-semibold text-on-surface">bge-large-en-v1.5</span></div>
+</div>
+</div>
+<!-- Stage 3 -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border border-outline-variant shadow-xs">
+<div class="absolute -left-[21px] top-3.5 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background"></div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-medium text-on-surface">3. Knowledge Retrieval</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">12ms</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">
+                FAISS: Top-3 retrieved, 12ms.
+              </p>
+<div class="p-1.5 rounded bg-surface-container text-[11px] font-mono text-on-surface-variant space-y-0.5">
+<div>Index: <span class="text-on-surface">techmart-kb-vector-v3</span></div>
+<div>Cosine metric: <span class="text-[#065F46] font-semibold">0.941</span></div>
+</div>
+</div>
+<!-- Stage 4 -->
+<div class="relative bg-surface-container-lowest p-3 rounded-lg border border-outline-variant shadow-xs">
+<div class="absolute -left-[21px] top-3.5 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background"></div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-title-sm text-title-sm font-medium text-on-surface">4. Assembly &amp; Guardrails</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">276ms</span>
+</div>
+<div class="space-y-1 mt-1 text-[12px]">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Hallucination check:</span>
+<span class="font-semibold text-[#065F46]">Passed (0.01)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Groundedness score:</span>
+<span class="font-semibold text-primary">99.4% match</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Latency & Cost Telemetry Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-4 shadow-sm mt-4">
+<div class="flex items-center justify-between pb-2 mb-3 border-b border-outline-variant/60">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Session Telemetry</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]" data-icon="speed">speed</span>
+</div>
+<div class="grid grid-cols-2 gap-3 mb-3">
+<!-- E2E Latency -->
+<div class="p-2 rounded-lg bg-surface-container-low border border-outline-variant/40">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-0.5">E2E Latency</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface block">340ms</span>
+<span class="text-[11px] font-medium text-[#065F46]">-18ms vs avg</span>
+</div>
+<!-- Token Usage -->
+<div class="p-2 rounded-lg bg-surface-container-low border border-outline-variant/40">
+<span class="font-label-sm text-label-sm text-on-surface-variant block mb-0.5">Tokens</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface block">412</span>
+<span class="text-[11px] text-on-surface-variant">298 in / 114 out</span>
+</div>
+</div>
+<!-- Cost & Cumulative -->
+<div class="space-y-2 pt-1 border-t border-outline-variant/40 font-body-sm text-body-sm">
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Estimated Step Cost:</span>
+<span class="font-mono font-semibold text-on-surface">$0.0008</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-on-surface-variant">Session Cumulative:</span>
+<span class="font-mono font-semibold text-primary">$0.0142</span>
+</div>
+</div>
+<!-- Miniature Vector Latency Sparkline Bar -->
+<div class="mt-3 pt-3 border-t border-outline-variant/40">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>Latency Distribution</span>
+<span>340ms</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden flex">
+<div class="bg-primary/70 h-full" style="width: 4%;" title="Input: 14ms"></div>
+<div class="bg-secondary h-full" style="width: 11%;" title="Router: 38ms"></div>
+<div class="bg-tertiary h-full" style="width: 4%;" title="Retrieval: 12ms"></div>
+<div class="bg-primary-container h-full" style="width: 81%;" title="Assembly: 276ms"></div>
+</div>
+<div class="flex justify-between text-[10px] text-on-surface-variant mt-1 font-mono">
+<span>Input</span>
+<span>Router</span>
+<span>RAG</span>
+<span>Gen (81%)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Bottom Strip -->
+<div class="p-3 bg-surface-container-lowest border-t border-outline-variant shrink-0 flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+            Vector Engine: Online
+          </span>
+<span class="font-mono">v1.4.12-prod</span>
+</div>
+</section>
+</main>
+</div>
+</body></html>

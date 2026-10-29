@@ -1,0 +1,474 @@
+{
+  "router": "v2_llm_based",
+  "n_cases": 30,
+  "overall": {
+    "exact_match_rate": 0.5,
+    "hit_rate": 0.8666666666666667,
+    "avg_precision": 0.7833333333333333,
+    "avg_latency_ms": 477.70586666714127
+  },
+  "by_category": {
+    "ambiguous": {
+      "n": 4,
+      "exact_match_rate": 0.0,
+      "hit_rate": 1.0
+    },
+    "clean_multi": {
+      "n": 5,
+      "exact_match_rate": 0.6,
+      "hit_rate": 1.0
+    },
+    "clean_single": {
+      "n": 15,
+      "exact_match_rate": 0.6666666666666666,
+      "hit_rate": 1.0
+    },
+    "hard_paraphrase": {
+      "n": 6,
+      "exact_match_rate": 0.3333333333333333,
+      "hit_rate": 0.3333333333333333
+    }
+  },
+  "cases": [
+    {
+      "query": "I was charged twice for the same order",
+      "category": "clean_single",
+      "expected": [
+        "billing"
+      ],
+      "predicted": [
+        "billing"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 805.6930000020657
+    },
+    {
+      "query": "How do I get a refund for a defective item",
+      "category": "clean_single",
+      "expected": [
+        "billing"
+      ],
+      "predicted": [
+        "billing",
+        "complaint"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 0.5,
+      "latency_ms": 629.2100000027858
+    },
+    {
+      "query": "My subscription payment failed",
+      "category": "clean_single",
+      "expected": [
+        "billing"
+      ],
+      "predicted": [
+        "billing"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 630.7364999993297
+    },
+    {
+      "query": "My device won't connect to Wi-Fi",
+      "category": "clean_single",
+      "expected": [
+        "technical"
+      ],
+      "predicted": [
+        "technical"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 648.0717000013101
+    },
+    {
+      "query": "The app keeps showing a login error",
+      "category": "clean_single",
+      "expected": [
+        "technical"
+      ],
+      "predicted": [
+        "technical"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 642.9155999976501
+    },
+    {
+      "query": "Firmware update is stuck",
+      "category": "clean_single",
+      "expected": [
+        "technical"
+      ],
+      "predicted": [
+        "technical"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 641.3742000004277
+    },
+    {
+      "query": "What is the warranty period on this product",
+      "category": "clean_single",
+      "expected": [
+        "product"
+      ],
+      "predicted": [
+        "product",
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 0.5,
+      "latency_ms": 632.9944000026444
+    },
+    {
+      "query": "Is this charger compatible with the older model",
+      "category": "clean_single",
+      "expected": [
+        "product"
+      ],
+      "predicted": [
+        "product"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 635.1080999993428
+    },
+    {
+      "query": "How do I file a warranty claim",
+      "category": "clean_single",
+      "expected": [
+        "product"
+      ],
+      "predicted": [
+        "faq",
+        "product"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 0.5,
+      "latency_ms": 627.9766999978165
+    },
+    {
+      "query": "I want to file a complaint about my experience",
+      "category": "clean_single",
+      "expected": [
+        "complaint"
+      ],
+      "predicted": [
+        "complaint"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 631.9273000008252
+    },
+    {
+      "query": "This is the third time I've had this issue, I'm furious",
+      "category": "clean_single",
+      "expected": [
+        "complaint"
+      ],
+      "predicted": [
+        "complaint",
+        "technical"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 0.5,
+      "latency_ms": 634.5657000019855
+    },
+    {
+      "query": "I'd like to escalate my case to a manager",
+      "category": "clean_single",
+      "expected": [
+        "complaint"
+      ],
+      "predicted": [
+        "complaint"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 639.8564000010083
+    },
+    {
+      "query": "What are your store hours",
+      "category": "clean_single",
+      "expected": [
+        "faq"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 631.9981000015105
+    },
+    {
+      "query": "How long does shipping take",
+      "category": "clean_single",
+      "expected": [
+        "faq"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 628.1588000019838
+    },
+    {
+      "query": "How do I reset my password",
+      "category": "clean_single",
+      "expected": [
+        "faq"
+      ],
+      "predicted": [
+        "technical",
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 0.5,
+      "latency_ms": 622.9419000010239
+    },
+    {
+      "query": "I paid yesterday but Premium is still locked with a login error",
+      "category": "clean_multi",
+      "expected": [
+        "billing",
+        "technical"
+      ],
+      "predicted": [
+        "billing",
+        "technical"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 636.1766000009084
+    },
+    {
+      "query": "I was charged for a product that arrived defective and I want to complain",
+      "category": "clean_multi",
+      "expected": [
+        "billing",
+        "product",
+        "complaint"
+      ],
+      "predicted": [
+        "billing"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 190.19049999769777
+    },
+    {
+      "query": "My refund never came through and now I can't log into my account either",
+      "category": "clean_multi",
+      "expected": [
+        "billing",
+        "technical"
+      ],
+      "predicted": [
+        "billing",
+        "technical"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 753.6182999974699
+    },
+    {
+      "query": "The warranty claim was denied and I'm extremely unhappy about it",
+      "category": "clean_multi",
+      "expected": [
+        "product",
+        "complaint"
+      ],
+      "predicted": [
+        "product",
+        "complaint"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 207.26579999973183
+    },
+    {
+      "query": "I got double-charged and this is the second time, I want to escalate this",
+      "category": "clean_multi",
+      "expected": [
+        "billing",
+        "complaint"
+      ],
+      "predicted": [
+        "billing"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 296.7792000017653
+    },
+    {
+      "query": "yeah so i ordered this thing like 2 weeks ago and money left my account twice not sure why",
+      "category": "hard_paraphrase",
+      "expected": [
+        "billing"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": false,
+      "precision": 0.0,
+      "latency_ms": 215.41209999850253
+    },
+    {
+      "query": "cant get the thing to talk to my phone anymore worked fine last week",
+      "category": "hard_paraphrase",
+      "expected": [
+        "technical"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": false,
+      "precision": 0.0,
+      "latency_ms": 281.87270000125864
+    },
+    {
+      "query": "does the 2 year thing cover it if i drop it in water",
+      "category": "hard_paraphrase",
+      "expected": [
+        "product"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": false,
+      "precision": 0.0,
+      "latency_ms": 209.01529999900959
+    },
+    {
+      "query": "been on hold forever and nobody is helping me this is ridiculous",
+      "category": "hard_paraphrase",
+      "expected": [
+        "complaint"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": false,
+      "precision": 0.0,
+      "latency_ms": 295.2456000020902
+    },
+    {
+      "query": "when are yall open on sunday",
+      "category": "hard_paraphrase",
+      "expected": [
+        "faq"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 276.7658000011579
+    },
+    {
+      "query": "so i paid for the premium thing but its still not working and idk why",
+      "category": "hard_paraphrase",
+      "expected": [
+        "billing",
+        "technical"
+      ],
+      "predicted": [
+        "billing",
+        "technical"
+      ],
+      "exact_match": true,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 301.3597999997728
+    },
+    {
+      "query": "can I speak to a human",
+      "category": "ambiguous",
+      "expected": [
+        "complaint",
+        "faq"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 214.52210000279592
+    },
+    {
+      "query": "is there a mobile app for this",
+      "category": "ambiguous",
+      "expected": [
+        "technical",
+        "faq"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 284.7722000005888
+    },
+    {
+      "query": "do you sell smartphones",
+      "category": "ambiguous",
+      "expected": [
+        "product",
+        "faq"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 232.00720000022557
+    },
+    {
+      "query": "my order is late and I'm not happy about it",
+      "category": "ambiguous",
+      "expected": [
+        "faq",
+        "complaint"
+      ],
+      "predicted": [
+        "faq"
+      ],
+      "exact_match": false,
+      "hit": true,
+      "precision": 1.0,
+      "latency_ms": 252.64439999955357
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Premium Subscription Troubleshooting
+
+If your Premium subscription is not unlocking after payment, first confirm the payment was successfully charged by checking your account billing history. Premium features typically activate within 15 minutes of a successful payment. If more than an hour has passed and Premium is still locked, try logging out and logging back in to refresh your account status. Persistent issues after these steps should be escalated to the technical support team along with your order confirmation number.
+
+Subscription Renewal and Billing Cycles
+Premium subscriptions renew automatically on the same calendar day each month as the original purchase date. If that day does not exist in a given month (e.g., subscribed on the 31st), renewal occurs on the last day of that month instead. A failed renewal payment triggers three retry attempts over 5 days before the subscription is downgraded to free tier; the account is not charged again until a valid payment method is provided.
+
+Canceling a Subscription
+Subscriptions can be canceled anytime from account settings; cancellation takes effect at the end of the current billing period, and Premium features remain active until then. Canceling does not trigger an automatic refund for the current period unless the cancellation occurs within the 7-day refund window from the original purchase.
+
+Switching Between Monthly and Annual Plans
+Switching from monthly to annual billing takes effect immediately, with a prorated credit applied for unused monthly time. Switching from annual to monthly takes effect at the end of the current annual term, since annual plans are treated as pre-paid and are not eligible for mid-term downgrades.
+
+Multiple Devices and Account Sharing
+A single Premium subscription covers up to 5 registered devices on one account. Attempting to activate a 6th device will prompt you to deactivate an existing one first. Premium status does not transfer between accounts even if devices are shared within a household.
+

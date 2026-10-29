@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechMart Support AI - Reliability &amp; Operations</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface": "#0b1c30",
+            "surface-container-highest": "#d3e4fe",
+            "surface-variant": "#d3e4fe",
+            "inverse-surface": "#213145",
+            "error": "#ba1a1a",
+            "on-primary-fixed-variant": "#3323cc",
+            "inverse-primary": "#c3c0ff",
+            "on-secondary-container": "#fefcff",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-background": "#0b1c30",
+            "tertiary": "#005338",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#dad7ff",
+            "primary-fixed-dim": "#c3c0ff",
+            "outline-variant": "#c7c4d8",
+            "on-tertiary-container": "#67f4b7",
+            "on-tertiary-fixed": "#002113",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-surface-variant": "#464555",
+            "on-secondary-fixed": "#001a42",
+            "outline": "#777587",
+            "secondary-fixed-dim": "#adc6ff",
+            "tertiary-fixed": "#6ffbbe",
+            "error-container": "#ffdad6",
+            "primary-fixed": "#e2dfff",
+            "on-error-container": "#93000a",
+            "primary-container": "#4f46e5",
+            "secondary-fixed": "#d8e2ff",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#2170e4",
+            "surface-container-low": "#eff4ff",
+            "secondary": "#0058be",
+            "on-primary-fixed": "#0f0069",
+            "primary": "#3525cd",
+            "surface-dim": "#cbdbf5",
+            "tertiary-container": "#006e4b",
+            "on-error": "#ffffff",
+            "background": "#f8f9ff",
+            "surface-container-high": "#dce9ff",
+            "surface-container": "#e5eeff",
+            "surface": "#f8f9ff",
+            "surface-tint": "#4d44e3",
+            "inverse-on-surface": "#eaf1ff",
+            "on-secondary-fixed-variant": "#004395"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-lg": "2rem",
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "gutter-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "space-md": "1rem",
+            "margin-md": "1.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "display": ["Inter", "sans-serif"],
+            "headline-lg": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "title-sm": ["Inter", "sans-serif"],
+            "headline-sm": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Inter", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"],
+            "headline-md": ["Inter", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"]
+          },
+          "fontSize": {
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md min-h-screen flex">
+<!-- Desktop Side Rail Navigation (Shared Component Execution) -->
+<aside class="fixed top-0 left-0 h-screen w-60 p-4 border-r border-outline-variant/30 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-sm">
+<div class="space-y-6">
+<!-- Header Brand -->
+<div class="flex items-center gap-3 px-1 py-1">
+<img alt="TechMart Support AI logo mark" class="w-8 h-8 rounded-lg object-contain shadow-xs" src="https://lh3.googleusercontent.com/aida/AEtjO1WN40CFvk8Xoc0rvgWIFtc2jn3V0iaQxf4Yu8wYIvb5TO-y9UobXEuQ71NJLXVlSI2m1EHKqzsH2chFQoRxQ-JsAPJFqt4ksunjSLVC7IgYqFCtgtKtK2pu1xT3w40FEtk8O5So0spZp_v1X82mBeWEt5LH4cJ81NyMfKlCb6W1ao_5TByWoijRLSoaNFPQkuCuzSQLgPtsONhiotVROREFQdf7AchO3AmRVfF9HwBcgJPRSoBLQb-IQk4"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md font-bold text-on-surface tracking-tight truncate">TechMart Support AI</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium truncate">Intelligent Support. Grounded Answers.</span>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="space-y-1">
+<!-- Support Workspace -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-body-sm hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span>Support Workspace</span>
+</a>
+<!-- RAG & Router Benchmarks -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-body-sm hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>RAG &amp; Router Benchmarks</span>
+</a>
+<!-- Reliability & Operations (ACTIVE) -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-container-low text-primary font-title-sm border-l-2 border-primary" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="flex-1">Reliability &amp; Operations</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-body-sm hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Footer -->
+<div class="pt-4 border-t border-outline-variant/30 space-y-3">
+<div class="px-3 py-2 rounded-lg bg-surface-container-low/50 flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-primary text-[22px]">account_circle</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Engineering Ops</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">eng-ops@techmart.internal</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors" title="Logout">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+</button>
+</div>
+<button class="w-full h-9 px-3 rounded-lg bg-primary hover:bg-[#4338ca] text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-xs transition-colors duration-150">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span>Deploy Patch</span>
+</button>
+</div>
+</aside>
+<!-- Top App Bar Navigation (Shared Component Execution) -->
+<header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-lowest border-b border-outline-variant/30 z-40 px-6 flex justify-between items-center shadow-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TechMart Support AI</span>
+<span class="text-outline-variant">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reliability &amp; Operations</span>
+<span class="text-outline-variant">/</span>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold">Infra Telemetry</span>
+</div>
+<div class="flex items-center gap-3">
+<!-- Live Status Badge -->
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#10B981]"></span>
+</span>
+<span class="font-medium">System Operational</span>
+</div>
+<!-- API Version Tag -->
+<span class="px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-surface-container-low text-primary border border-outline-variant/30">/v1</span>
+<div class="h-4 w-px bg-outline-variant/40 mx-1"></div>
+<!-- Trailing Action Buttons -->
+<button class="h-8 px-2.5 rounded-lg border border-outline-variant/40 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface text-label-md font-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">file_download</span>
+<span>Export Telemetry</span>
+</button>
+<button class="h-8 px-2.5 rounded-lg border border-outline-variant/40 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface text-label-md font-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary animate-spin" style="animation-duration: 9s;">sync</span>
+<span>Auto-refresh (10s)</span>
+</button>
+<div class="flex items-center gap-1 ml-1 text-on-surface-variant">
+<button class="p-1.5 rounded-md hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Manual Refresh">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Fine Tune">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface-container-low hover:text-on-surface transition-colors" title="Docs &amp; Help">
+<span class="material-symbols-outlined text-[18px]">help</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-60 pt-14 flex-1 overflow-y-auto bg-background min-h-screen">
+<div class="p-8 max-w-[1600px] mx-auto space-y-6">
+<!-- Page Header & Action Controls -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2">
+<div class="space-y-1">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Reliability &amp; Infrastructure Operations</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Real-time gateway telemetry, vector store index health, provider quota tracking, and live distributed request traces.</p>
+</div>
+<div class="flex items-center gap-3">
+<!-- Time Window Selector -->
+<div class="relative">
+<select class="h-9 pl-3 pr-8 rounded-lg border border-outline-variant/50 bg-surface-container-lowest text-on-surface font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary shadow-xs cursor-pointer appearance-none">
+<option>Last 1 hour</option>
+<option>Last 6 hours</option>
+<option>Last 24 hours</option>
+</select>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none">expand_more</span>
+</div>
+<!-- Primary Button -->
+<button class="h-9 px-4 rounded-lg bg-primary hover:bg-[#4338ca] text-on-primary font-title-sm text-title-sm flex items-center gap-2 shadow-xs transition-colors duration-150">
+<span class="material-symbols-outlined text-[18px]">radar</span>
+<span>Run Diagnostic Probe</span>
+</button>
+</div>
+</div>
+<!-- SECTION 1: Service Health & Gateway Status (Grid of 3 cards) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: FastAPI Gateway -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 shadow-xs flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">router</span>
+</span>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">FastAPI Gateway</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">edge-gateway-cluster-us-east</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                Operational
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2 border-t border-outline-variant/20">
+<div class="p-2 rounded bg-surface-container-low/60">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Uptime</div>
+<div class="font-title-md text-title-md font-bold text-on-surface">99.98%</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low/60">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Probe Latency</div>
+<div class="font-title-md text-title-md font-bold text-primary font-mono">1.8 ms</div>
+</div>
+</div>
+<div class="space-y-1.5 text-body-sm text-on-surface-variant pt-1 font-mono text-[12px]">
+<div class="flex justify-between items-center">
+<span>/v1/health probe:</span>
+<span class="text-[#065F46] font-semibold">200 OK</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Active workers:</span>
+<span class="text-on-surface font-medium">8 uvicorn (2 nodes)</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Memory load:</span>
+<span class="text-on-surface font-medium">412 MB / 2 GB</span>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden mt-3">
+<div class="bg-primary h-full rounded-full" style="width: 20.6%;"></div>
+</div>
+</div>
+<!-- Card 2: Vector Store (FAISS) -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 shadow-xs flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+</span>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Vector Store (FAISS)</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">IndexFlatIP · 1536 dim</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                Ready &amp; Synchronized
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2 border-t border-outline-variant/20">
+<div class="p-2 rounded bg-surface-container-low/60">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Vectors Indexed</div>
+<div class="font-title-md text-title-md font-bold text-on-surface font-mono">78,450</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low/60">
+<div class="font-label-sm text-label-sm text-on-surface-variant">p99 Query Latency</div>
+<div class="font-title-md text-title-md font-bold text-primary font-mono">14.2 ms</div>
+</div>
+</div>
+<div class="space-y-1.5 text-body-sm text-on-surface-variant pt-1 font-mono text-[12px]">
+<div class="flex justify-between items-center">
+<span>In-memory status:</span>
+<span class="text-[#065F46] font-medium">Warm cache 100%</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Last index build:</span>
+<span class="text-on-surface font-medium">24m ago</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Partition shards:</span>
+<span class="text-on-surface font-medium">4 active partitions</span>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden mt-3">
+<div class="bg-[#10B981] h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Card 3: State & Cache (MongoDB / Redis) -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 shadow-xs flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">database</span>
+</span>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">State &amp; Cache</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">MongoDB / Redis Cluster</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                Connected
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-2 border-t border-outline-variant/20">
+<div class="p-2 rounded bg-surface-container-low/60">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Replica Lag</div>
+<div class="font-title-md text-title-md font-bold text-on-surface font-mono">0 ms</div>
+</div>
+<div class="p-2 rounded bg-surface-container-low/60">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Pool Utilization</div>
+<div class="font-title-md text-title-md font-bold text-primary font-mono">24 / 100</div>
+</div>
+</div>
+<div class="space-y-1.5 text-body-sm text-on-surface-variant pt-1 font-mono text-[12px]">
+<div class="flex justify-between items-center">
+<span>Cluster State:</span>
+<span class="text-[#065F46] font-medium">Primary R/W OK</span>
+</div>
+<div class="flex justify-between items-center">
+<span>TTL Index Sync:</span>
+<span class="text-on-surface font-medium">Active (7-day window)</span>
+</div>
+<div class="flex justify-between items-center">
+<span>Redis Key Eviction:</span>
+<span class="text-on-surface font-medium">0 / sec (no pressure)</span>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container-low h-1.5 rounded-full overflow-hidden mt-3">
+<div class="bg-primary h-full rounded-full" style="width: 24%;"></div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Performance & Resiliency Metrics (Grid of 3 panels) -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Panel 1: Latency Percentiles Over Time -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Latency Percentiles (Recent)</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Resolution: 10m intervals</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Grounded response resolution comparing median (p50) against tail SLAs (p95).</p>
+<!-- SVG Line Chart Visual -->
+<div class="relative w-full h-44 bg-surface-container-low/30 rounded-lg p-3 border border-outline-variant/20 flex flex-col justify-between">
+<!-- Y-axis guide lines -->
+<div class="absolute inset-x-3 top-3 border-b border-dashed border-outline-variant/25 text-[10px] font-mono text-outline">800ms SLA Target</div>
+<div class="absolute inset-x-3 top-1/2 border-b border-dashed border-outline-variant/20 text-[10px] font-mono text-outline">400ms</div>
+<div class="absolute inset-x-3 bottom-8 border-b border-dashed border-outline-variant/20 text-[10px] font-mono text-outline">200ms</div>
+<!-- SVG Latency Curve -->
+<svg class="w-full h-28 overflow-visible mt-2" preserveaspectratio="none" viewbox="0 0 320 100">
+<!-- p95 amber line -->
+<path d="M 0,42 Q 60,35 120,48 T 240,38 T 320,40" fill="none" stroke="#D97706" stroke-linecap="round" stroke-width="2.2"></path>
+<!-- p50 indigo line -->
+<path d="M 0,78 Q 60,74 120,77 T 240,73 T 320,75" fill="none" stroke="#4F46E5" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Data Point Dots -->
+<circle cx="120" cy="48" fill="#D97706" r="3"></circle>
+<circle cx="240" cy="38" fill="#D97706" r="3"></circle>
+<circle cx="320" cy="40" fill="#D97706" r="3.5"></circle>
+<circle cx="120" cy="77" fill="#4F46E5" r="3"></circle>
+<circle cx="240" cy="73" fill="#4F46E5" r="3"></circle>
+<circle cx="320" cy="75" fill="#4F46E5" r="3.5"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="flex justify-between items-center text-[10px] font-mono text-on-surface-variant pt-2 border-t border-outline-variant/20">
+<span>-60m</span>
+<span>-50m</span>
+<span>-40m</span>
+<span>-30m</span>
+<span>-20m</span>
+<span>-10m</span>
+<span>Now</span>
+</div>
+</div>
+</div>
+<!-- Legend Bar -->
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#4F46E5]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">p50: <strong class="font-semibold text-primary">220ms</strong> (Avg)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#D97706]"></span>
+<span class="font-label-sm text-label-sm text-on-surface">p95: <strong class="font-semibold text-[#D97706]">580ms</strong> (SLA &lt; 800ms)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel 2: Request Throughput & HTTP Status Breakdown -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">bar_chart</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Throughput &amp; Status Code Ratio</h3>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-medium bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]">24.2k req/hr</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Traffic composition by HTTP response code across all client edge sessions.</p>
+<!-- Stacked Bar Visual -->
+<div class="space-y-3">
+<div class="h-6 w-full rounded-md overflow-hidden flex bg-surface-container-low border border-outline-variant/20">
+<div class="bg-[#10B981] h-full transition-all duration-300" style="width: 98.6%;" title="2xx Success: 98.6%"></div>
+<div class="bg-[#F59E0B] h-full transition-all duration-300" style="width: 1.1%;" title="429 Rate Limits: 1.1%"></div>
+<div class="bg-[#EF4444] h-full transition-all duration-300" style="width: 0.3%;" title="5xx Server Errors: 0.3%"></div>
+</div>
+<!-- Breakdown Items -->
+<div class="space-y-2 pt-1 font-body-sm">
+<div class="flex items-center justify-between text-[12px]">
+<span class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-[#10B981]"></span>
+<span class="text-on-surface font-medium">2xx Success (Grounded Deliveries)</span>
+</span>
+<span class="font-mono text-on-surface font-semibold">98.6% <span class="text-on-surface-variant font-normal">(140.8k)</span></span>
+</div>
+<div class="flex items-center justify-between text-[12px]">
+<span class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-[#F59E0B]"></span>
+<span class="text-on-surface font-medium">429 Rate Limited (Client Backoff)</span>
+</span>
+<span class="font-mono text-[#92400E] font-semibold">1.1% <span class="text-on-surface-variant font-normal">(1.57k)</span></span>
+</div>
+<div class="flex items-center justify-between text-[12px]">
+<span class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-sm bg-[#EF4444]"></span>
+<span class="text-on-surface font-medium">5xx Server Errors (Uncaught Exceptions)</span>
+</span>
+<span class="font-mono text-error font-semibold">0.3% <span class="text-on-surface-variant font-normal">(428)</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Total Summary Pill -->
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Aggregate Volume: <strong class="text-on-surface">142.8k requests</strong></span>
+<span class="inline-flex items-center gap-1 font-mono text-[#065F46] font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span> Error Rate: 0.28%
+            </span>
+</div>
+</div>
+<!-- Panel 3: LLM Provider Quota & Resiliency -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 shadow-xs flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-semibold">Provider Quota &amp; Resiliency</h3>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+                Gemini &amp; OpenAI
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Token usage thresholds, adaptive backoff health, and fallback circuit state.</p>
+<!-- TPM Meter -->
+<div class="space-y-2">
+<div class="flex justify-between items-center text-body-sm">
+<span class="font-medium text-on-surface">Active TPM Utilization</span>
+<span class="font-mono text-primary font-semibold">284k / 1,000k TPM (28.4%)</span>
+</div>
+<div class="w-full bg-surface-container-low h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-300" style="width: 28.4%;"></div>
+</div>
+</div>
+<!-- Resiliency Indicators -->
+<div class="grid grid-cols-2 gap-2 mt-4">
+<div class="p-2.5 rounded-lg border border-outline-variant/20 bg-surface-container-low/40">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Circuit Breaker</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+<span class="font-title-sm text-title-sm text-[#065F46] font-semibold">Closed / Healthy</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg border border-outline-variant/20 bg-surface-container-low/40">
+<div class="font-label-sm text-label-sm text-on-surface-variant">Retry Frequency</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-title-sm text-title-sm text-on-surface font-mono font-semibold">0.4%</span>
+<span class="text-[11px] text-on-surface-variant">(Normal)</span>
+</div>
+</div>
+</div>
+<!-- Storm Protection Highlight -->
+<div class="mt-3 p-2.5 rounded-lg bg-[#ECFDF5] border border-[#A7F3D0] flex items-center gap-2">
+<span class="material-symbols-outlined text-[#065F46] text-[18px]">security</span>
+<span class="font-label-sm text-label-sm text-[#065F46] font-medium">0 retry storms detected in the last 24h</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-body-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Secondary Failover Route:</span>
+<span class="inline-flex items-center gap-1 font-mono text-[12px] text-[#065F46] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span> Standby 100% Ready
+            </span>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Live Structured Logs / Distributed Request Traces -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant/30 shadow-xs overflow-hidden">
+<!-- Card Header -->
+<div class="p-5 border-b border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">reorder</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md font-bold text-on-surface">Live Request Traces &amp; Gateway Logs</h3>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse"></span>
+                  Streaming active
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monotonic log tail with deterministic semantic routing classification.</p>
+</div>
+</div>
+<!-- Quick Filter Toolbar -->
+<div class="flex flex-wrap items-center gap-2.5">
+<!-- Search ID -->
+<div class="relative">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant absolute left-2.5 top-1/2 -translate-y-1/2">search</span>
+<input class="h-8 pl-8 pr-3 rounded-lg border border-outline-variant/40 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/60 font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary w-52" placeholder="Search Trace ID or IP..." type="text"/>
+</div>
+<!-- Status Code Filter -->
+<select class="h-8 pl-2.5 pr-7 rounded-lg border border-outline-variant/40 bg-surface-container-lowest text-on-surface font-label-md text-label-md focus:outline-none focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option>All Statuses</option>
+<option>200 OK</option>
+<option>422 Validation Error</option>
+<option>429 Rate Limited</option>
+<option>500 Server Error</option>
+</select>
+<!-- Router Filter -->
+<select class="h-8 pl-2.5 pr-7 rounded-lg border border-outline-variant/40 bg-surface-container-lowest text-on-surface font-label-md text-label-md focus:outline-none focus:ring-1 focus:ring-primary appearance-none cursor-pointer">
+<option>All Routers</option>
+<option>TF-IDF + Logistic</option>
+<option>LLM Structured Output</option>
+<option>Rule-Based Regex</option>
+</select>
+<!-- Auto-scroll Toggle -->
+<label class="flex items-center gap-1.5 px-2.5 h-8 rounded-lg border border-outline-variant/40 bg-surface-container-low/40 cursor-pointer text-label-md text-label-md text-on-surface select-none">
+<input checked="" class="rounded border-outline-variant/60 text-primary focus:ring-primary h-3.5 w-3.5" type="checkbox"/>
+<span>Auto-scroll</span>
+</label>
+</div>
+</div>
+<!-- Structured Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/50 border-b border-outline-variant/20 font-label-sm text-label-sm text-on-surface-variant">
+<th class="py-2.5 px-4 font-semibold uppercase tracking-wider">Timestamp</th>
+<th class="py-2.5 px-4 font-semibold uppercase tracking-wider">Request / Trace ID</th>
+<th class="py-2.5 px-4 font-semibold uppercase tracking-wider">Endpoint</th>
+<th class="py-2.5 px-4 font-semibold uppercase tracking-wider">Router Used</th>
+<th class="py-2.5 px-4 font-semibold uppercase tracking-wider">Specialist Agents Invoked</th>
+<th class="py-2.5 px-4 font-semibold uppercase tracking-wider">Latency</th>
+<th class="py-2.5 px-4 font-semibold uppercase tracking-wider">Status</th>
+<th class="py-2.5 px-4 font-semibold uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 font-body-sm text-body-sm">
+<!-- Trace Row 1: Normal Support Query -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface-variant whitespace-nowrap">10:24:18.492</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1 font-mono text-[12px] bg-surface-container-low px-2 py-0.5 rounded text-primary border border-outline-variant/30">
+<span>req_98a7df1</span>
+<button class="hover:text-on-surface" title="Copy Trace ID"><span class="material-symbols-outlined text-[13px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface font-medium whitespace-nowrap">/v1/chat/completions</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+                    TF-IDF + Logistic
+                  </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Returns Specialist
+                  </span>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] font-semibold text-on-surface whitespace-nowrap">184 ms</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check</span> 200 OK
+                  </span>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="text-primary hover:underline font-label-md text-label-md">Payload</button>
+<span class="text-outline-variant">·</span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Trace Graph</button>
+</div>
+</td>
+</tr>
+<!-- Trace Row 2: Validation Error -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface-variant whitespace-nowrap">10:24:17.104</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1 font-mono text-[12px] bg-surface-container-low px-2 py-0.5 rounded text-primary border border-outline-variant/30">
+<span>req_98a7cf9</span>
+<button class="hover:text-on-surface"><span class="material-symbols-outlined text-[13px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface font-medium whitespace-nowrap">/v1/embeddings</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-surface-container-low text-on-surface-variant border border-outline-variant/40">
+                    Rule-Based Regex
+                  </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="text-on-surface-variant italic">None (Schema rejected)</span>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] font-semibold text-on-surface whitespace-nowrap">12 ms</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">warning</span> 422 Validation Error
+                  </span>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="text-primary hover:underline font-label-md text-label-md">Payload</button>
+<span class="text-outline-variant">·</span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Trace Graph</button>
+</div>
+</td>
+</tr>
+<!-- Trace Row 3: Complex Multi-step LLM Query -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface-variant whitespace-nowrap">10:24:15.820</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1 font-mono text-[12px] bg-surface-container-low px-2 py-0.5 rounded text-primary border border-outline-variant/30">
+<span>req_98a7bc2</span>
+<button class="hover:text-on-surface"><span class="material-symbols-outlined text-[13px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface font-medium whitespace-nowrap">/v1/chat/completions</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+                    LLM Structured Output
+                  </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0058be]"></span>
+                    Billing Support &amp; Escrow
+                  </span>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] font-semibold text-on-surface whitespace-nowrap">340 ms</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check</span> 200 OK
+                  </span>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="text-primary hover:underline font-label-md text-label-md">Payload</button>
+<span class="text-outline-variant">·</span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Trace Graph</button>
+</div>
+</td>
+</tr>
+<!-- Trace Row 4: Rate Limited Batch -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface-variant whitespace-nowrap">10:24:14.200</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1 font-mono text-[12px] bg-surface-container-low px-2 py-0.5 rounded text-primary border border-outline-variant/30">
+<span>req_98a7aa8</span>
+<button class="hover:text-on-surface"><span class="material-symbols-outlined text-[13px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface font-medium whitespace-nowrap">/v1/vector/search</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+                    TF-IDF + Logistic
+                  </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="text-on-surface-variant">Rate limited at gateway</span>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] font-semibold text-[#D97706] whitespace-nowrap">4 ms</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#FFFBEB] border border-[#FDE68A] text-[#92400E] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">timer</span> 429 Rate Limited
+                  </span>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="text-primary hover:underline font-label-md text-label-md">Payload</button>
+<span class="text-outline-variant">·</span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Trace Graph</button>
+</div>
+</td>
+</tr>
+<!-- Trace Row 5: Hardware Technician Synthesis -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface-variant whitespace-nowrap">10:24:12.639</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1 font-mono text-[12px] bg-surface-container-low px-2 py-0.5 rounded text-primary border border-outline-variant/30">
+<span>req_98a79fe</span>
+<button class="hover:text-on-surface"><span class="material-symbols-outlined text-[13px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface font-medium whitespace-nowrap">/v1/chat/completions</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+                    LLM Structured Output
+                  </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10B981]"></span>
+                    Hardware Tech
+                  </span>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] font-semibold text-on-surface whitespace-nowrap">620 ms</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check</span> 200 OK
+                  </span>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="text-primary hover:underline font-label-md text-label-md">Payload</button>
+<span class="text-outline-variant">·</span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Trace Graph</button>
+</div>
+</td>
+</tr>
+<!-- Trace Row 6: Escalation Trigger -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface-variant whitespace-nowrap">10:24:10.012</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1 font-mono text-[12px] bg-surface-container-low px-2 py-0.5 rounded text-primary border border-outline-variant/30">
+<span>req_98a783b</span>
+<button class="hover:text-on-surface"><span class="material-symbols-outlined text-[13px]">content_copy</span></button>
+</div>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] text-on-surface font-medium whitespace-nowrap">/v1/chat/completions</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-medium bg-[#EFF6FF] text-[#1E40AF] border border-[#BFDBFE]">
+                    TF-IDF + Logistic
+                  </span>
+</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-[#ba1a1a]"></span>
+                    Escalation Handler
+                  </span>
+</td>
+<td class="py-3 px-4 font-mono text-[12px] font-semibold text-on-surface whitespace-nowrap">215 ms</td>
+<td class="py-3 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#ECFDF5] border border-[#A7F3D0] text-[#065F46] font-label-sm text-label-sm font-medium">
+<span class="material-symbols-outlined text-[14px]">check</span> 200 OK
+                  </span>
+</td>
+<td class="py-3 px-4 text-right whitespace-nowrap">
+<div class="inline-flex items-center gap-2">
+<button class="text-primary hover:underline font-label-md text-label-md">Payload</button>
+<span class="text-outline-variant">·</span>
+<button class="text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Trace Graph</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer -->
+<div class="p-4 border-t border-outline-variant/20 bg-surface-container-low/20 flex flex-col sm:flex-row items-center justify-between text-body-sm text-on-surface-variant gap-2">
+<div class="flex items-center gap-2 font-mono text-[12px]">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+<span>Showing last 50 of 14,290 traces. Monotonic logging stream active.</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded border border-outline-variant/40 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface text-label-sm font-label-sm font-medium transition-colors">
+              Previous
+            </button>
+<span class="font-mono text-[11px] px-2 text-on-surface font-semibold">Page 1 of 286</span>
+<button class="px-2.5 py-1 rounded border border-outline-variant/40 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface text-label-sm font-label-sm font-medium transition-colors">
+              Next
+            </button>
+</div>
+</div>
+</div>
+<!-- Grounded Answer Block (AI Specific Component from Style Guidance) -->
+<div class="bg-surface-container-low/40 rounded-lg border border-outline-variant/30 border-l-4 border-l-primary-container p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">verified_user</span>
+<div>
+<h4 class="font-title-sm text-title-sm font-semibold text-on-surface">Telemetry Groundedness &amp; Provenance Engine</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Traces are cryptographically signed at the gateway ingress. Retrieval queries reference verified FAISS vector snapshots with an average similarity confidence of 0.942.</p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="text-right font-mono text-[11px]">
+<span class="text-on-surface-variant">Cluster Quorum:</span>
+<span class="text-[#065F46] font-semibold ml-1">Healthy (3/3 nodes)</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg border border-outline-variant/40 bg-surface-container-lowest hover:bg-surface-container-low text-primary font-label-md text-label-md font-semibold transition-colors">
+            Audit Security Log
+          </button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

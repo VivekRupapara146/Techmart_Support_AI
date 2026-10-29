@@ -1,0 +1,13 @@
+Device Setup and Connectivity Troubleshooting
+
+Setting Up a New Device
+When setting up a new TechMart device for the first time, ensure it is charged to at least 50% before powering on. Download the TechMart Connect app from your device's app store and follow the in-app pairing instructions. Most devices pair over Bluetooth and require your home Wi-Fi password during setup. If pairing fails, restart both the device and your phone's Bluetooth, then try again within 10 minutes of the device entering pairing mode.
+
+Wi-Fi Connectivity Issues
+If a device repeatedly disconnects from Wi-Fi, check that your router is broadcasting on the 2.4GHz band, since most TechMart smart devices do not support 5GHz-only networks. Move the device closer to the router during initial setup, then reposition after the connection is stable. If the device shows "connected" but appears offline in the app, power cycle the device by holding the reset button for 10 seconds.
+
+App Login and Account Errors
+If the TechMart Connect app shows a "session expired" or "unable to sign in" error, first confirm your phone's date and time are set automatically, since a significant clock mismatch will cause authentication failures. Clearing the app's cache (not its data) resolves most persistent login loops. If a password reset email does not arrive within 10 minutes, check spam folders before contacting support, as delivery delays are common with some email providers.
+
+Firmware Updates
+Devices check for firmware updates automatically when connected to Wi-Fi and charging. If an update fails partway through, do not unplug the device — it will automatically retry. A failed update that does not retry within 30 minutes should be reported to technical support with the device's serial number.

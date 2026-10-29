@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechMart Support AI — Sign In</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Google Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Custom Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#67f4b7",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-primary-fixed": "#0f0069",
+            "on-secondary-container": "#fefcff",
+            "error": "#ba1a1a",
+            "outline-variant": "#c7c4d8",
+            "secondary-fixed": "#d8e2ff",
+            "secondary": "#0058be",
+            "secondary-fixed-dim": "#adc6ff",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-surface": "#0b1c30",
+            "secondary-container": "#2170e4",
+            "on-primary-container": "#dad7ff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#464555",
+            "surface-dim": "#cbdbf5",
+            "surface-container-low": "#eff4ff",
+            "tertiary-fixed": "#6ffbbe",
+            "on-background": "#0b1c30",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface-variant": "#d3e4fe",
+            "primary": "#3525cd",
+            "surface-container-high": "#dce9ff",
+            "primary-fixed": "#e2dfff",
+            "surface": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#c3c0ff",
+            "on-tertiary-fixed": "#002113",
+            "tertiary": "#005338",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#213145",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#004395",
+            "on-primary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#006e4b",
+            "background": "#f8f9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#001a42",
+            "surface-container-highest": "#d3e4fe",
+            "primary-container": "#4f46e5",
+            "on-primary-fixed-variant": "#3323cc",
+            "outline": "#777587",
+            "surface-tint": "#4d44e3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "margin-lg": "2rem",
+            "space-xs": "0.25rem",
+            "gutter-lg": "1.5rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "margin-md": "1.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "title-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "title-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background font-body-md text-on-surface min-h-screen flex flex-col justify-between antialiased selection:bg-primary-fixed selection:text-primary">
+<!-- Subtle Ambient Top Grid / Decorative Horizon -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-40">
+<div class="absolute -top-[300px] left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-b from-primary-fixed/30 via-surface-container-low/20 to-transparent blur-3xl"></div>
+<div class="absolute inset-0 bg-[radial-gradient(#c7c4d8_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_35%,#000_60%,transparent_100%)] opacity-30"></div>
+</div>
+<!-- Main Content Wrapper (Centered Authentication Canvas) -->
+<main class="relative z-10 flex-1 flex flex-col items-center justify-center p-space-md sm:p-space-lg md:p-space-xl">
+<!-- Modal Card (420px standard width) -->
+<div class="w-full max-w-[440px] bg-surface-container-lowest border border-outline-variant/40 rounded-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.06),0_1px_2px_-1px_rgba(15,23,42,0.04)] overflow-hidden transition-all duration-200">
+<!-- Top Accent Line -->
+<div class="h-1 w-full bg-gradient-to-r from-primary-container via-primary to-secondary-container"></div>
+<div class="p-6 sm:p-8">
+<!-- Header Section -->
+<header class="flex flex-col items-center text-center">
+<!-- Brand Logo Mark -->
+<div class="relative w-11 h-11 mb-3 rounded-lg flex items-center justify-center bg-surface-container-low border border-outline-variant/30 shadow-xs">
+<img alt="TechMart Support AI logo mark" class="w-9 h-9 object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WN40CFvk8Xoc0rvgWIFtc2jn3V0iaQxf4Yu8wYIvb5TO-y9UobXEuQ71NJLXVlSI2m1EHKqzsH2chFQoRxQ-JsAPJFqt4ksunjSLVC7IgYqFCtgtKtK2pu1xT3w40FEtk8O5So0spZp_v1X82mBeWEt5LH4cJ81NyMfKlCb6W1ao_5TByWoijRLSoaNFPQkuCuzSQLgPtsONhiotVROREFQdf7AchO3AmRVfF9HwBcgJPRSoBLQb-IQk4"/>
+</div>
+<!-- Product Title -->
+<h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">TechMart Support AI</h1>
+<!-- Tagline -->
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Intelligent Support. Grounded Answers.</p>
+<!-- Security / Gateway Badge -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 mt-3 rounded-full bg-surface-container-low border border-outline-variant/30 text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+<span>v1.4 Production Gateway</span>
+</div>
+</header>
+<!-- Alert Banner: Session Expiration Notification -->
+<aside class="mt-5 p-3 rounded-lg bg-surface-container border border-outline-variant/40 text-on-surface flex items-start gap-2.5 transition-all duration-200" id="session-alert" role="alert">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5" data-icon="info">info</span>
+<div class="flex-1 text-left">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+<strong class="font-title-sm text-on-surface font-medium">Session expired due to inactivity.</strong> Please sign in to resume your active telemetry and chat stream.
+            </p>
+</div>
+<button aria-label="Dismiss alert" class="text-outline hover:text-on-surface transition-colors p-0.5 -mr-1 -mt-1 rounded" onclick="document.getElementById('session-alert').remove()" type="button">
+<span class="material-symbols-outlined text-[16px]" data-icon="close">close</span>
+</button>
+</aside>
+<!-- Authentication Form -->
+<form class="mt-6 space-y-4" id="auth-form" onsubmit="event.preventDefault(); triggerAuth();">
+<!-- Field 1: Email or Username -->
+<div class="space-y-1.5 text-left">
+<label class="block font-label-md text-label-md text-on-surface" for="identifier">
+              Email or Username <span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+</div>
+<input class="block w-full pl-9 pr-3 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all duration-150" id="identifier" name="identifier" placeholder="eng-ops@techmart.internal" required="" type="text" value="eng-ops@techmart.internal"/>
+</div>
+</div>
+<!-- Field 2: Password -->
+<div class="space-y-1.5 text-left">
+<div class="flex items-center justify-between">
+<label class="block font-label-md text-label-md text-on-surface" for="password">
+                Password <span class="text-error font-bold">*</span>
+</label>
+<a class="font-label-sm text-label-sm text-primary-container hover:text-primary transition-colors focus:outline-none focus:underline" href="#">
+                Forgot password?
+              </a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+</div>
+<input class="block w-full pl-9 pr-10 py-2 text-body-md font-body-md bg-surface-container-lowest border border-outline-variant rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 tracking-wider transition-all duration-150" id="password" name="password" placeholder="Enter corporate credentials" required="" type="password" value="••••••••••••"/>
+<button aria-label="Toggle password visibility" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface focus:outline-none" id="toggle-password" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="visibility" id="password-eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Options Row: Remember Me & SSO indicator -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary-container focus:ring-primary-container/30 focus:ring-offset-0 cursor-pointer" id="remember" name="remember" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Keep session active for 12 hours</span>
+</label>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary font-medium bg-tertiary-fixed/30 px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+              SSO Ready
+            </span>
+</div>
+<!-- Primary Submit Action -->
+<div class="pt-2">
+<button class="w-full h-10 px-4 flex items-center justify-center gap-2 rounded-lg bg-primary-container text-on-primary font-title-sm text-title-sm hover:bg-primary transition-all duration-150 shadow-sm hover:shadow active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-primary-container/40" id="submit-button" type="submit">
+<span id="button-text">Sign In to Gateway</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward" id="button-icon">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- SSO Divider -->
+<div class="relative my-6">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/30"></div>
+</div>
+<div class="relative flex justify-center text-center">
+<span class="bg-surface-container-lowest px-3 font-label-sm text-label-sm text-outline uppercase tracking-wider">
+              or authenticate via enterprise identity
+            </span>
+</div>
+</div>
+<!-- SSO Button -->
+<button class="w-full h-10 px-4 flex items-center justify-center gap-2.5 rounded-lg border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-title-sm text-title-sm transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-primary-container/20" onclick="triggerSSO()" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="fingerprint">fingerprint</span>
+<span>Sign in with Okta / SSO</span>
+</button>
+</div>
+<!-- Bottom Inset Telemetry Strip -->
+<div class="px-6 py-2.5 bg-surface-container-low/60 border-t border-outline-variant/30 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary-container text-[14px]" data-icon="verified_user">verified_user</span>
+          mTLS Handshake Active
+        </span>
+<span class="font-mono text-outline">region: us-east-1</span>
+</div>
+</div>
+<!-- Security Note & Protocol Badges Below Card -->
+<div class="mt-6 flex flex-col items-center text-center space-y-3">
+<!-- Shield Pill -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/40 shadow-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary-container text-[15px]" data-icon="shield">shield</span>
+<span>Protected by JWT Session Authentication &amp; Strict Rate Limiting (v1.4)</span>
+</div>
+<!-- Footer Telemetry / Compliance Navigation -->
+<nav class="flex items-center justify-center gap-4 text-on-surface-variant font-body-sm text-body-sm pt-1">
+<a class="inline-flex items-center gap-1.5 hover:text-on-surface transition-colors" href="#">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>API Status: <span class="font-medium text-tertiary">Operational</span></span>
+</a>
+<span class="text-outline-variant">·</span>
+<a class="hover:text-primary-container hover:underline transition-colors" href="#">Docs &amp; OpenID Config</a>
+<span class="text-outline-variant">·</span>
+<a class="hover:text-primary-container hover:underline transition-colors" href="#">Security Compliance</a>
+</nav>
+</div>
+</main>
+<!-- Global Footer Copyright / Grounding Anchor -->
+<footer class="relative z-10 py-4 text-center font-label-sm text-label-sm text-outline border-t border-outline-variant/20 bg-surface-container-lowest/70 backdrop-blur-sm">
+<div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-medium text-on-surface">TechMart Support AI</span>
+<span>— Grounded Answers Platform</span>
+</div>
+<div>
+<span>Encrypted end-to-end (AES-256-GCM) · Enterprise Partition 09</span>
+</div>
+</div>
+</footer>
+<!-- Micro-Interactions Script -->
+<script>
+    // Password Visibility Toggle
+    function togglePasswordVisibility() {
+      const pwdInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('password-eye-icon');
+      if (pwdInput.type === 'password') {
+        pwdInput.type = 'text';
+        eyeIcon.textContent = 'visibility_off';
+      } else {
+        pwdInput.type = 'password';
+        eyeIcon.textContent = 'visibility';
+      }
+    }
+
+    // Simulated Authentication Flow
+    function triggerAuth() {
+      const btn = document.getElementById('submit-button');
+      const text = document.getElementById('button-text');
+      const icon = document.getElementById('button-icon');
+      
+      btn.disabled = true;
+      btn.classList.add('opacity-90', 'cursor-wait');
+      text.textContent = 'Authenticating...';
+      icon.textContent = 'sync';
+      icon.classList.add('animate-spin');
+
+      setTimeout(() => {
+        text.textContent = 'Session Verified';
+        icon.classList.remove('animate-spin');
+        icon.textContent = 'check_circle';
+        btn.classList.remove('bg-primary-container');
+        btn.classList.add('bg-tertiary-container');
+        
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.classList.remove('opacity-90', 'cursor-wait', 'bg-tertiary-container');
+          btn.classList.add('bg-primary-container');
+          text.textContent = 'Sign In to Gateway';
+          icon.textContent = 'arrow_forward';
+        }, 1500);
+      }, 1200);
+    }
+
+    function triggerSSO() {
+      const btn = event.currentTarget;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `
+        <span class="material-symbols-outlined text-[18px] animate-spin" data-icon="sync">sync</span>
+        <span>Redirecting to Okta Identity Provider...</span>
+      `;
+      btn.classList.add('cursor-wait', 'bg-surface-container-low');
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.classList.remove('cursor-wait', 'bg-surface-container-low');
+      }, 1600);
+    }
+  </script>
+</body></html>

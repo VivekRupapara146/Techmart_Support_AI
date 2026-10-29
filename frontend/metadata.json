@@ -1,0 +1,6 @@
+{
+  "name": "TechMart Support AI",
+  "description": "Enterprise AI support console with real-time RAG grounding verification, semantic router benchmarks, and infrastructure telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

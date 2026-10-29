@@ -1,0 +1,55 @@
+# Local development stack: the API container + a local MongoDB (so you can
+# run the whole backend without needing an Atlas cluster). For production,
+# point MONGO_URI at a real managed cluster instead (see DEPLOYMENT.md) —
+# this file is for local dev/demo, not how it's deployed.
+#
+# Usage:
+#   cp backend/.env.example .env.docker   # fill in GEMINI_API_KEY, JWT_SECRET_KEY, etc.
+#   docker compose up --build
+#
+# The API is then at http://localhost:8000 (http://localhost:8000/docs for
+# the OpenAPI UI), Mongo at localhost:27017.
+
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.docker
+    environment:
+      # Overrides .env.docker's MONGO_URI (if set) so compose always talks
+      # to the mongo service above by its service name, not localhost —
+      # "localhost" inside this container would mean the container itself.
+      MONGO_URI: mongodb://mongo:27017
+      PORT: "8000"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    volumes:
+      # Hot-reload for local dev: code changes on the host are reflected
+      # without a rebuild. Comment this out (or use `docker compose -f
+      # docker-compose.yml -f docker-compose.prod.yml up` with a file that
+      # omits it) to test the exact image that would ship to production.
+      - ./backend:/app
+    command: ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port 8000 --reload"]
+
+volumes:
+  mongo_data:

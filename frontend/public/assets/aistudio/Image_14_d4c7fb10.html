@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechMart Support AI - Settings &amp; Configuration</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#67f4b7",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-primary-fixed": "#0f0069",
+            "on-secondary-container": "#fefcff",
+            "error": "#ba1a1a",
+            "outline-variant": "#c7c4d8",
+            "secondary-fixed": "#d8e2ff",
+            "secondary": "#0058be",
+            "secondary-fixed-dim": "#adc6ff",
+            "primary-fixed-dim": "#c3c0ff",
+            "on-surface": "#0b1c30",
+            "secondary-container": "#2170e4",
+            "on-primary-container": "#dad7ff",
+            "on-error": "#ffffff",
+            "on-surface-variant": "#464555",
+            "surface-dim": "#cbdbf5",
+            "surface-container-low": "#eff4ff",
+            "tertiary-fixed": "#6ffbbe",
+            "on-background": "#0b1c30",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface-variant": "#d3e4fe",
+            "primary": "#3525cd",
+            "surface-container-high": "#dce9ff",
+            "primary-fixed": "#e2dfff",
+            "surface": "#f8f9ff",
+            "surface-container": "#e5eeff",
+            "on-error-container": "#93000a",
+            "inverse-primary": "#c3c0ff",
+            "on-tertiary-fixed": "#002113",
+            "tertiary": "#005338",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#213145",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-fixed-variant": "#004395",
+            "on-primary": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "tertiary-container": "#006e4b",
+            "background": "#f8f9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-secondary": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed": "#001a42",
+            "surface-container-highest": "#d3e4fe",
+            "primary-container": "#4f46e5",
+            "on-primary-fixed-variant": "#3323cc",
+            "outline": "#777587",
+            "surface-tint": "#4d44e3"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-xl": "2rem",
+            "margin-lg": "2rem",
+            "space-xs": "0.25rem",
+            "gutter-lg": "1.5rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem",
+            "space-md": "1rem",
+            "margin-md": "1.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Inter"],
+            "headline-lg": ["Inter"],
+            "title-sm": ["Inter"],
+            "label-sm": ["Inter"],
+            "title-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "body-sm": ["Inter"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="h-full font-body-md text-on-surface bg-background antialiased overflow-hidden select-none">
+<!-- ================= PERSISTENT SHELL: SIDE NAV BAR ================= -->
+<aside class="fixed top-0 left-0 h-screen w-60 border-r border-outline-variant/30 bg-surface-container-lowest z-30 flex flex-col justify-between p-4 shadow-sm">
+<!-- Nav Header -->
+<div>
+<div class="flex items-center gap-3 px-2 py-1 mb-5">
+<img alt="TechMart Support AI logo mark" class="w-8 h-8 rounded-lg object-contain border border-outline-variant/30 p-0.5 bg-surface-container-low" src="https://lh3.googleusercontent.com/aida/AEtjO1WN40CFvk8Xoc0rvgWIFtc2jn3V0iaQxf4Yu8wYIvb5TO-y9UobXEuQ71NJLXVlSI2m1EHKqzsH2chFQoRxQ-JsAPJFqt4ksunjSLVC7IgYqFCtgtKtK2pu1xT3w40FEtk8O5So0spZp_v1X82mBeWEt5LH4cJ81NyMfKlCb6W1ao_5TByWoijRLSoaNFPQkuCuzSQLgPtsONhiotVROREFQdf7AchO3AmRVfF9HwBcgJPRSoBLQb-IQk4"/>
+<div class="flex flex-col">
+<span class="text-title-md font-title-md font-bold text-on-surface tracking-tight">TechMart Support AI</span>
+<span class="text-label-sm font-label-sm text-outline tracking-normal">Intelligent Operations</span>
+</div>
+</div>
+<!-- Action CTA -->
+<button class="w-full flex items-center justify-center gap-2 mb-6 h-9 px-4 rounded-lg bg-primary-container text-on-error font-title-sm hover:opacity-95 shadow-sm transition-opacity">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Deploy Patch</span>
+</button>
+<!-- Nav Items -->
+<nav class="space-y-1">
+<!-- Tab 1: Support Workspace -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-body-sm hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span>Support Workspace</span>
+</a>
+<!-- Tab 2: Reliability & Operations -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-body-sm hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span>Reliability &amp; Operations</span>
+</a>
+<!-- Tab 3: RAG & Router Benchmarks -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant font-body-sm hover:bg-surface-container-low hover:text-on-surface transition-colors duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+<span>RAG &amp; Router Benchmarks</span>
+</a>
+<!-- Tab 4: Settings (ACTIVE) -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-surface-container-low text-primary font-title-sm border-l-2 border-primary" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+</div>
+<!-- Nav Footer -->
+<div class="pt-4 border-t border-outline-variant/30">
+<div class="flex items-center justify-between px-2 py-2 rounded-lg hover:bg-surface-container-low transition-colors duration-150 cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-outline text-[22px]">account_circle</span>
+<div class="flex flex-col">
+<span class="text-title-sm font-title-sm text-on-surface">Engineering Ops</span>
+<span class="text-label-sm font-label-sm text-outline">Tier-3 Lead Eng</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">more_vert</span>
+</div>
+<p class="text-label-sm font-label-sm text-outline/80 mt-2 text-center">Intelligent Support. Grounded Answers.</p>
+</div>
+</aside>
+<!-- ================= PERSISTENT SHELL: TOP NAV BAR ================= -->
+<header class="fixed top-0 left-60 right-0 h-14 bg-surface-container-lowest z-20 border-b border-outline-variant/30 flex justify-between items-center px-6">
+<!-- Breadcrumb Title -->
+<div class="flex items-center gap-2">
+<span class="text-title-sm font-title-sm font-medium text-on-surface-variant">TechMart Support AI</span>
+<span class="text-outline text-title-sm">/</span>
+<span class="text-title-sm font-title-sm font-medium text-on-surface-variant">Settings</span>
+<span class="text-outline text-title-sm">/</span>
+<span class="text-title-sm font-title-sm text-primary font-semibold">Global Configuration</span>
+</div>
+<!-- Top Bar Actions -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-50 text-tertiary-container border border-emerald-200 text-label-md font-label-md">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>System Operational</span>
+</div>
+<span class="text-label-sm font-label-sm text-outline px-2 py-0.5 rounded border border-outline-variant/40 bg-surface">/v1</span>
+<div class="h-4 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150" title="Refresh Telemetry">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+</button>
+<button class="p-1.5 rounded-lg text-primary bg-surface-container-low transition-colors duration-150" title="Settings Tune">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-150" title="Operational Documentation">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ================= UNDERLYING WORKSPACE CANVAS (VEILED / DIMMED) ================= -->
+<main aria-hidden="true" class="ml-60 pt-14 h-screen overflow-y-auto bg-background p-8 opacity-40 blur-[1px] pointer-events-none">
+<div class="max-w-6xl mx-auto space-y-6">
+<!-- High-level Metric Stat Bento Row -->
+<div class="grid grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-4 shadow-sm">
+<p class="text-label-sm font-label-sm text-on-surface-variant">RESOLUTIONS TODAY</p>
+<p class="text-display font-display text-on-surface mt-1">14,892</p>
+<span class="text-label-md font-label-md text-tertiary-container flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span> 99.4% Automated
+          </span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-4 shadow-sm">
+<p class="text-label-sm font-label-sm text-on-surface-variant">AVG ROUTING LATENCY</p>
+<p class="text-display font-display text-on-surface mt-1">42 ms</p>
+<span class="text-label-md font-label-md text-outline flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Target &lt; 50ms
+          </span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-4 shadow-sm">
+<p class="text-label-sm font-label-sm text-on-surface-variant">GROUNDEDNESS SCORE</p>
+<p class="text-display font-display text-on-surface mt-1">98.7%</p>
+<span class="text-label-md font-label-md text-tertiary-container flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">shield</span> High Guardrails
+          </span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-4 shadow-sm">
+<p class="text-label-sm font-label-sm text-on-surface-variant">CLUSTER HEALTH</p>
+<p class="text-display font-display text-on-surface mt-1">All Green</p>
+<span class="text-label-md font-label-md text-secondary flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[16px]">dns</span> 16 Nodes
+          </span>
+</div>
+</div>
+<!-- Main Operational Mock Table & Grounded Card -->
+<div class="bg-surface-container-lowest border border-outline-variant/30 rounded-lg p-6 shadow-sm">
+<h2 class="text-title-md font-title-md text-on-surface mb-3">Live RAG Ingestion &amp; Dispatch Queue</h2>
+<div class="border border-outline-variant/30 rounded-lg overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/30 text-label-sm font-label-sm text-on-surface-variant">
+<th class="py-2.5 px-4">TICKET ID</th>
+<th class="py-2.5 px-4">DISPATCH CLASSIFIER</th>
+<th class="py-2.5 px-4">TOP-K RETRIEVAL SOURCE</th>
+<th class="py-2.5 px-4">HALLUCINATION RISK</th>
+<th class="py-2.5 px-4">STATUS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20 text-body-sm font-body-sm text-on-surface">
+<tr>
+<td class="py-3 px-4 font-mono text-primary font-medium">#TM-92014</td>
+<td class="py-3 px-4">Order Refund &amp; Return RMA</td>
+<td class="py-3 px-4 text-outline">kb_returns_v4.2.parquet</td>
+<td class="py-3 px-4 text-emerald-700 font-medium">0.02 (Safe)</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-xs bg-emerald-100 text-emerald-800">Auto-Resolved</span></td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-mono text-primary font-medium">#TM-92015</td>
+<td class="py-3 px-4">Device Firmware Sync Failure</td>
+<td class="py-3 px-4 text-outline">tech_manuals_iot.parquet</td>
+<td class="py-3 px-4 text-emerald-700 font-medium">0.05 (Safe)</td>
+<td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-xs bg-blue-100 text-blue-800">Synthesizing</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+<!-- ================= ACCESSIBLE BACKDROP OVERLAY ================= -->
+<div aria-label="Dismiss drawer" class="fixed inset-0 bg-[#0F172A]/40 backdrop-blur-[2px] z-40 transition-opacity duration-200"></div>
+<!-- ================= SLIDE-OVER DRAWER (RIGHT SIDE, ~460PX) ================= -->
+<aside aria-labelledby="drawer-title" aria-modal="true" class="fixed top-0 right-0 h-full w-[460px] max-w-full bg-surface-container-lowest shadow-2xl z-50 flex flex-col border-l border-outline-variant/30 transform transition-transform duration-200 ease-out" id="settings-drawer" role="dialog">
+<!-- DRAWER HEADER -->
+<div class="px-6 py-5 border-b border-outline-variant/30 bg-surface-container-lowest flex items-start justify-between">
+<div class="flex items-start gap-3">
+<div class="p-2 rounded-lg bg-surface-container-low text-primary border border-outline-variant/30 mt-0.5">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</div>
+<div>
+<h2 class="text-title-md font-title-md text-on-surface" id="drawer-title">Settings &amp; Configuration</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Environment, routing policies, and session preferences.</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm px-1.5 py-0.5 rounded border border-outline-variant/40 bg-surface-container-low text-outline">ESC</span>
+<button aria-label="Close drawer" class="p-1 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container-low transition-colors" id="close-drawer-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- DRAWER BODY: SCROLLABLE SECTIONS -->
+<div class="flex-1 overflow-y-auto px-6 py-6 space-y-7">
+<!-- SECTION 1: Active Router Configuration (Read-only view) -->
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<h3 class="text-label-sm font-label-sm text-outline uppercase tracking-wider font-semibold">ROUTER ARCHITECTURE</h3>
+<span class="text-label-sm font-label-sm text-primary font-medium hover:underline cursor-pointer">Benchmarks →</span>
+</div>
+<div class="rounded-lg border border-outline-variant/30 bg-surface p-4 shadow-sm">
+<div class="flex items-start justify-between gap-3">
+<div>
+<p class="text-title-sm font-title-sm text-on-surface font-semibold">TF-IDF + Logistic Regression</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Dual-stage deterministic intent classifier</p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-label-sm font-label-sm font-semibold flex-shrink-0">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span>Active Production</span>
+</div>
+</div>
+<!-- Monospace Specs Matrix -->
+<div class="mt-4 pt-3 border-t border-outline-variant/30 grid grid-cols-2 gap-3 text-body-sm font-body-sm">
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-outline block">Avg Latency</span>
+<span class="font-mono text-on-surface font-semibold text-title-sm">42ms avg</span>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-outline block">Macro-F1 Score</span>
+<span class="font-mono text-on-surface font-semibold text-title-sm">0.941</span>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-outline block">Inference Cost</span>
+<span class="font-mono text-emerald-700 font-semibold text-title-sm">$0.00 / 1k</span>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-outline block">Model Checkpoint</span>
+<span class="font-mono text-primary truncate block text-title-sm font-medium">tfidf_router_v2.bin</span>
+</div>
+</div>
+<!-- Grounded Answer Block notice -->
+<div class="mt-3.5 pl-3 border-l-[3px] border-primary-container bg-surface-container-low py-2 pr-2.5 rounded-r">
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+<strong class="font-semibold text-on-surface">Live Routing Note:</strong> Router strategies can be hot-swapped in the RAG &amp; Router Benchmarks suite.
+            </p>
+</div>
+</div>
+</div>
+<!-- SECTION 2: API Namespace & Gateway Documentation -->
+<div>
+<h3 class="text-label-sm font-label-sm text-outline uppercase tracking-wider font-semibold mb-2.5">API NAMESPACE &amp; GATEWAY</h3>
+<div class="rounded-lg border border-outline-variant/30 bg-surface-container-lowest p-4 space-y-3.5 shadow-sm">
+<!-- Direct Clickable Swagger Link -->
+<a class="flex items-center justify-between p-3 rounded-lg border border-outline-variant/30 bg-surface hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">api</span>
+<div>
+<p class="text-title-sm font-title-sm text-on-surface group-hover:text-primary transition-colors">/v1/docs OpenAPI &amp; Swagger UI</p>
+<p class="text-label-sm font-label-sm text-outline">Interactive contract schemas &amp; endpoints</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[18px]">open_in_new</span>
+</a>
+<!-- Cluster Endpoint -->
+<div>
+<label class="text-label-sm font-label-sm text-on-surface-variant font-medium block mb-1">Current Cluster Endpoint</label>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface border border-outline-variant/30 font-mono text-body-sm text-on-surface">
+<span class="truncate">https://gateway.techmart.internal/v1</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] bg-outline-variant/30 text-on-surface-variant font-sans font-semibold uppercase">mTLS</span>
+</div>
+</div>
+<!-- Live Token Preview -->
+<div>
+<div class="flex items-center justify-between mb-1">
+<label class="text-label-sm font-label-sm text-on-surface-variant font-medium">Production Access Token</label>
+<button class="text-label-sm font-label-sm text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Copy Token
+              </button>
+</div>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface border border-outline-variant/30 font-mono text-body-sm text-on-surface-variant">
+<span>tm_live_********************</span>
+<span class="material-symbols-outlined text-outline text-[18px]">key</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Appearance & Workspace Preferences -->
+<div>
+<h3 class="text-label-sm font-label-sm text-outline uppercase tracking-wider font-semibold mb-2.5">APPEARANCE &amp; WORKSPACE PREFERENCES</h3>
+<div class="rounded-lg border border-outline-variant/30 bg-surface-container-lowest p-4 space-y-4 shadow-sm">
+<!-- Segmented Theme Control -->
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium block mb-2">Theme Mode</span>
+<div class="grid grid-cols-3 gap-1.5 p-1 rounded-lg bg-surface border border-outline-variant/30">
+<!-- Selected Option -->
+<button class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md bg-surface-container-lowest border border-outline-variant/30 text-on-surface shadow-sm font-title-sm text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+<span>Light (Selected)</span>
+</button>
+<!-- Unselected 1 -->
+<button class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md text-on-surface-variant hover:text-on-surface font-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px]">dark_mode</span>
+<span>Dark (Beta)</span>
+</button>
+<!-- Unselected 2 -->
+<button class="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-md text-on-surface-variant hover:text-on-surface font-label-md transition-colors">
+<span class="material-symbols-outlined text-[16px]">devices</span>
+<span>System Sync</span>
+</button>
+</div>
+</div>
+<div class="h-px bg-outline-variant/20"></div>
+<!-- Toggle: Real-time Telemetry Auto-refresh -->
+<div class="flex items-center justify-between">
+<div class="pr-4">
+<span class="text-title-sm font-title-sm text-on-surface block">Real-time Telemetry Auto-refresh (10s)</span>
+<span class="text-body-sm font-body-sm text-outline">Poll cluster metrics and vector dispatch latency</span>
+</div>
+<!-- Toggle Switch (ON) -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+<!-- Toggle: Strict Groundedness Guardrail Blocking -->
+<div class="flex items-center justify-between">
+<div class="pr-4">
+<span class="text-title-sm font-title-sm text-on-surface block">Strict Groundedness Guardrail Blocking</span>
+<span class="text-body-sm font-body-sm text-outline">Halt auto-resolution when confidence &lt; 0.90</span>
+</div>
+<!-- Toggle Switch (ON) -->
+<label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-container"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- SECTION 4: Session Security & Danger Zone -->
+<div>
+<h3 class="text-label-sm font-label-sm text-outline uppercase tracking-wider font-semibold mb-2.5">SESSION SECURITY &amp; DANGER ZONE</h3>
+<div class="rounded-lg border border-red-200 bg-red-50/40 p-4 space-y-4">
+<div class="space-y-1.5 text-body-sm font-body-sm">
+<div class="flex items-center justify-between">
+<span class="text-outline">Client IP:</span>
+<span class="font-mono text-on-surface font-medium">10.240.12.8</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">Authentication:</span>
+<span class="text-on-surface font-medium inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">verified</span> Okta SSO (MFA active)
+              </span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-outline">TTL / Token Expiry:</span>
+<span class="font-mono text-on-surface font-semibold">4h 22m remaining</span>
+</div>
+</div>
+<!-- Prominent Destructive Button -->
+<button class="w-full flex items-center justify-center gap-2 h-10 px-4 rounded-lg bg-white border border-red-300 text-red-700 hover:bg-red-50 hover:border-red-400 font-title-sm text-title-sm shadow-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px] text-red-600">logout</span>
+<span>Revoke Session &amp; Sign Out</span>
+</button>
+</div>
+</div>
+</div>
+<!-- DRAWER FOOTER: QUICK STATUS -->
+<div class="px-6 py-3.5 bg-surface-container-low border-t border-outline-variant/30 flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>TechMart AI Core v3.14.0-patch4</span>
+<span class="flex items-center gap-1.5 text-emerald-700">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+        Node US-East-1d
+      </span>
+</div>
+</aside>
+<!-- Interactive behavior for keyboard ESC and close button -->
+<script>
+    const drawer = document.getElementById('settings-drawer');
+    const closeBtn = document.getElementById('close-drawer-btn');
+
+    function closeDrawer() {
+      drawer.style.transform = 'translateX(100%)';
+      setTimeout(() => {
+        // Subtle hint state
+        drawer.style.display = 'none';
+      }, 200);
+    }
+
+    closeBtn.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDrawer();
+      }
+    });
+  </script>
+</body></html>

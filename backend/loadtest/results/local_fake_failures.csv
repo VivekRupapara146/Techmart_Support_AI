@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences
+POST,/v1/auth/login,HTTPError('429 Client Error: Too Many Requests for url: /v1/auth/login'),11
+POST,/v1/chat,HTTPError('401 Client Error: Unauthorized for url: /v1/chat'),294
+POST,/v1/chat,HTTPError('429 Client Error: Too Many Requests for url: /v1/chat'),183

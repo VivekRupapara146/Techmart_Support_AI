@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TechMart Support AI</title>
+<!-- Inter Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#005236",
+            "tertiary-fixed": "#6ffbbe",
+            "surface-container-low": "#eff4ff",
+            "tertiary": "#005338",
+            "background": "#f8f9ff",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#c7c4d8",
+            "on-secondary-fixed": "#001a42",
+            "on-tertiary-fixed": "#002113",
+            "inverse-primary": "#c3c0ff",
+            "on-background": "#0b1c30",
+            "primary": "#3525cd",
+            "surface-tint": "#4d44e3",
+            "on-primary-container": "#dad7ff",
+            "inverse-on-surface": "#eaf1ff",
+            "secondary-container": "#2170e4",
+            "surface-container-high": "#dce9ff",
+            "on-error": "#ffffff",
+            "surface-bright": "#f8f9ff",
+            "secondary": "#0058be",
+            "surface-variant": "#d3e4fe",
+            "on-error-container": "#93000a",
+            "on-secondary-container": "#fefcff",
+            "outline": "#777587",
+            "inverse-surface": "#213145",
+            "secondary-fixed-dim": "#adc6ff",
+            "on-tertiary-container": "#67f4b7",
+            "primary-container": "#4f46e5",
+            "surface-container": "#e5eeff",
+            "on-primary-fixed-variant": "#3323cc",
+            "primary-fixed-dim": "#c3c0ff",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#d8e2ff",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#4edea3",
+            "surface": "#f8f9ff",
+            "surface-dim": "#cbdbf5",
+            "on-surface": "#0b1c30",
+            "on-secondary-fixed-variant": "#004395",
+            "on-surface-variant": "#464555",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#e2dfff",
+            "surface-container-highest": "#d3e4fe",
+            "tertiary-container": "#006e4b",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-fixed": "#0f0069"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "margin-lg": "2rem",
+            "margin-md": "1.5rem",
+            "space-xl": "2rem",
+            "gutter-lg": "1.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "gutter": "1rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "title-md": ["Inter"],
+            "headline-lg-mobile": ["Inter"],
+            "display": ["Inter"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "title-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-sm": ["Inter"],
+            "headline-md": ["Inter"],
+            "headline-lg": ["Inter"]
+          },
+          "fontSize": {
+            "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0.005em", "fontWeight": "400" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+    }
+    .custom-shadow-card {
+      box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+    }
+    .custom-shadow-dropdown {
+      box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface h-full flex overflow-hidden font-body-md text-body-md antialiased">
+<!-- Fixed Left Sidebar (SideNavBar) -->
+<aside class="w-60 h-screen fixed top-0 bottom-0 left-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col justify-between p-4 z-40 select-none">
+<!-- Sidebar Header & Primary Navigation -->
+<div class="flex flex-col gap-6">
+<!-- Brand & Tagline -->
+<div class="flex items-start gap-3 px-1 py-1">
+<img alt="TechMart Support AI Logo symbol" class="w-9 h-9 rounded-lg object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1X6YCG9dnowXC_0YbY-NwngdUslGmMIpC2VJ364r4_fAqsGBd2WNBwEMSZlhYoFhlBNPsLnbWD3h4xGhwiLUemJHXYxFMGHF6tLVuXsMXvtsvW6F6wBJ1sfldSpk6i_ar_FL17RuLZzJ2ODRdQu2lLJdSdL8Hhm_-i7k2SV7m8v3KH_4x8YIHhecn3p6p5QZX7bn4Iyygn6Bl1PX39DfeQBtFabroeuKBw5QjhJ_Q98AEr2q-zCDqgGKGc"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md font-semibold text-on-surface truncate tracking-tight">TechMart Support AI</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal leading-tight truncate">Intelligent Support. Grounded Answers.</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav aria-label="Main Navigation" class="flex flex-col gap-1">
+<!-- Tab 1: Support Workspace (Active) -->
+<a class="flex items-center gap-3 px-3 py-2 text-primary bg-surface-container-low font-medium rounded-lg border-l-2 border-primary transition-all duration-150 ease-in-out group" href="#workspace">
+<span class="material-symbols-outlined text-primary group-hover:scale-105 transition-transform" data-icon="support_agent">support_agent</span>
+<span class="font-body-md text-body-md font-medium tracking-normal">Support Workspace</span>
+</a>
+<!-- Tab 2: RAG & Router Benchmarks -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-normal rounded-lg hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 ease-in-out group" href="#benchmarks">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors" data-icon="query_stats">query_stats</span>
+<span class="font-body-md text-body-md tracking-normal">RAG &amp; Router Benchmarks</span>
+</a>
+<!-- Tab 3: Reliability & Operations -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-normal rounded-lg hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 ease-in-out group" href="#operations">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors" data-icon="tune">tune</span>
+<span class="font-body-md text-body-md tracking-normal">Reliability &amp; Operations</span>
+</a>
+<!-- Tab 4: Settings -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant font-normal rounded-lg hover:text-on-surface hover:bg-surface-container-low transition-colors duration-150 ease-in-out group" href="#settings">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-on-surface transition-colors" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md tracking-normal">Settings</span>
+</a>
+</nav>
+</div>
+<!-- Bottom User Profile Section (Engineering Ops) -->
+<div class="pt-3 border-t border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div aria-label="User avatar for Engineering Ops" class="w-8 h-8 rounded-full bg-surface-container-high text-primary font-title-sm text-title-sm font-semibold flex items-center justify-center flex-shrink-0">
+          EO
+        </div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface font-semibold truncate leading-tight">Engineering Ops</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">eng-ops@techmart.internal</span>
+</div>
+</div>
+<button aria-label="Engineering Ops sign out" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors flex items-center justify-center" title="Sign out" type="button">
+<span class="material-symbols-outlined text-outline hover:text-on-surface" data-icon="logout">logout</span>
+</button>
+</div>
+</aside>
+<!-- Right App Framework (Utility Bar + Content Stage) -->
+<div class="pl-60 flex-1 flex flex-col h-screen overflow-hidden">
+<!-- Top Utility Bar (TopNavBar) -->
+<header class="h-14 bg-surface-container-lowest border-b border-outline-variant px-8 flex items-center justify-between flex-shrink-0 select-none z-30">
+<!-- Left Breadcrumb Trail -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2">
+<span class="font-body-md text-body-md text-on-surface-variant">TechMart Support AI</span>
+<span class="font-body-md text-body-md text-outline-variant">/</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Workspace</span>
+<span class="font-body-md text-body-md text-outline-variant">/</span>
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Overview</span>
+</nav>
+<!-- Right Grouped Utilities -->
+<div class="flex items-center gap-3">
+<!-- Live System Operational Pill -->
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 font-label-md text-label-md font-medium tracking-tight">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span>System Operational</span>
+</div>
+<!-- API Version Badge -->
+<div class="inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container-low border border-outline-variant text-on-surface-variant font-mono font-label-md text-label-md font-semibold">
+          /v1
+        </div>
+<div class="h-4 w-[1px] bg-outline-variant mx-1"></div>
+<!-- Trailing Actions -->
+<button aria-label="API Documentation" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors" title="Knowledge Base &amp; API Docs" type="button">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+</button>
+<button aria-label="System Notifications" class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors relative" title="Notifications" type="button">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</button>
+</div>
+</header>
+<!-- Open Content Stage -->
+<main class="flex-1 bg-surface overflow-y-auto p-8 flex flex-col gap-6">
+<!-- Stage Section Header -->
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<h1 class="font-headline-md text-headline-md font-semibold text-on-surface tracking-tight">Support Workspace</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Real-time AI query resolution, grounding verification, and router observability.
+          </p>
+</div>
+<div class="flex items-center gap-3">
+<button class="inline-flex items-center gap-2 h-9 px-3.5 bg-surface-container-lowest border border-outline-variant hover:border-outline text-on-surface rounded-lg font-title-sm text-title-sm font-medium custom-shadow-card hover:bg-surface-container-low transition-all" type="button">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+<span>Filter Feed</span>
+</button>
+<button class="inline-flex items-center gap-2 h-9 px-4 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-title-sm text-title-sm font-medium shadow-sm transition-all duration-150 ease-in-out" type="button">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>New Session</span>
+</button>
+</div>
+</div>
+<!-- Quick Metrics Ribbon (Bento Micro Tier) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 custom-shadow-card flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<span>RAG Grounding Accuracy</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="verified">verified</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">99.4%</span>
+<span class="font-label-sm text-label-sm font-semibold text-tertiary flex items-center">
+              +0.3%
+            </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Validated by 14k vector traces</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 custom-shadow-card flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<span>Semantic Router Latency</span>
+<span class="material-symbols-outlined text-secondary" data-icon="speed">speed</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">42ms</span>
+<span class="font-label-sm text-label-sm font-semibold text-tertiary flex items-center">
+              -4ms p95
+            </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Embedding tier: bge-large-en</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 custom-shadow-card flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<span>Autonomous Resolution</span>
+<span class="material-symbols-outlined text-primary" data-icon="smart_toy">smart_toy</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">86.2%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">zero escalations</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Across standard e-commerce tier</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 custom-shadow-card flex flex-col gap-1">
+<div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md">
+<span>Escalation Queues</span>
+<span class="material-symbols-outlined text-outline" data-icon="alt_route">alt_route</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">3 Active</span>
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Tier-3 Engineers</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Median triage wait 1.2m</span>
+</div>
+</div>
+<!-- Spacious Content Stage Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg custom-shadow-card p-10 flex-1 min-h-[460px] flex flex-col items-center justify-center text-center relative overflow-hidden">
+<!-- Subtle Background Grid Flourish -->
+<div class="absolute inset-0 bg-[radial-gradient(#c7c4d8_1px,transparent_1px)] [background-size:16px_16px] opacity-25 pointer-events-none"></div>
+<!-- Centered Empty Canvas Card Content -->
+<div class="relative z-10 max-w-lg flex flex-col items-center">
+<!-- Central Icon Badge with Soft Glow -->
+<div class="relative mb-6">
+<div class="absolute -inset-2 bg-primary/10 rounded-full blur-md"></div>
+<div class="w-16 h-16 rounded-2xl bg-surface-container-low border border-primary/20 flex items-center justify-center text-primary relative">
+<span class="material-symbols-outlined text-[32px]" data-icon="support_agent">support_agent</span>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight mb-2">
+            Workspace Canvas Ready
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-8">
+            Select a module from the sidebar or initiate a support session to load child views and telemetry.
+          </p>
+<!-- Interactive Action Triggers -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
+<button class="group text-left p-3.5 bg-surface-bright border border-outline-variant rounded-lg hover:border-primary hover:bg-surface-container-low transition-all duration-150" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="forum">forum</span>
+<span class="material-symbols-outlined text-outline-variant text-[16px] group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<h3 class="font-title-sm text-title-sm font-semibold text-on-surface mb-0.5">Session Stream</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Live dialogue &amp; customer intents</p>
+</button>
+<button class="group text-left p-3.5 bg-surface-bright border border-outline-variant rounded-lg hover:border-primary hover:bg-surface-container-low transition-all duration-150" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="document_scanner">document_scanner</span>
+<span class="material-symbols-outlined text-outline-variant text-[16px] group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<h3 class="font-title-sm text-title-sm font-semibold text-on-surface mb-0.5">RAG Inspector</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Chunk attribution &amp; citation graph</p>
+</button>
+<button class="group text-left p-3.5 bg-surface-bright border border-outline-variant rounded-lg hover:border-primary hover:bg-surface-container-low transition-all duration-150" type="button">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" data-icon="hub">hub</span>
+<span class="material-symbols-outlined text-outline-variant text-[16px] group-hover:text-primary transition-colors" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<h3 class="font-title-sm text-title-sm font-semibold text-on-surface mb-0.5">Live Routing</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Classifiers, thresholds &amp; latency</p>
+</button>
+</div>
+</div>
+<!-- Grounded Answer Block (Design System Token Demonstration) -->
+<div class="mt-10 w-full max-w-xl text-left bg-surface border border-outline-variant rounded-lg p-4 border-l-[3px] border-l-primary custom-shadow-card flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5 flex-shrink-0" data-icon="shield_lock">shield_lock</span>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Deterministic Safety Anchor</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.2 rounded bg-surface-container text-primary font-mono">v1.4-strict</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Every generation requires direct passage grounding across authorized TechMart internal repositories. Hallucination guardrails active.
+            </p>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

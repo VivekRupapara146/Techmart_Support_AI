@@ -1,0 +1,81 @@
+name: Deploy to AWS App Runner
+
+# Manual trigger only (workflow_dispatch) — a resume/demo project shouldn't
+# auto-redeploy (and potentially rack up AWS cost) on every push. Run this
+# from the Actions tab when you actually want to ship a new build.
+#
+# One-time setup required before this will work — see DEPLOYMENT.md:
+#   1. An ECR repository to push images to.
+#   2. An App Runner service already created (console or `aws apprunner
+#      create-service`, documented in DEPLOYMENT.md) pointing at that ECR
+#      repo with "deploy automatically" OFF — this workflow explicitly
+#      triggers each deployment instead.
+#   3. An IAM role this workflow can assume via GitHub's OIDC provider (no
+#      long-lived AWS access keys stored as secrets) — trust policy and
+#      permissions documented in DEPLOYMENT.md.
+#   4. Repo variables/secrets: AWS_REGION, AWS_DEPLOY_ROLE_ARN,
+#      ECR_REPOSITORY, APP_RUNNER_SERVICE_ARN.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  id-token: write   # required for OIDC -> AWS role assumption
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials (OIDC, no stored keys)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Login to ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push image
+        env:
+          REGISTRY: ${{ steps.ecr-login.outputs.registry }}
+          REPOSITORY: ${{ vars.ECR_REPOSITORY }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          cd backend
+          docker build \
+            --build-arg GIT_COMMIT_SHA=${{ github.sha }} \
+            -t "$REGISTRY/$REPOSITORY:$IMAGE_TAG" \
+            -t "$REGISTRY/$REPOSITORY:latest" \
+            .
+          docker push "$REGISTRY/$REPOSITORY:$IMAGE_TAG"
+          docker push "$REGISTRY/$REPOSITORY:latest"
+
+      - name: Trigger App Runner deployment
+        run: |
+          aws apprunner start-deployment \
+            --service-arn "${{ vars.APP_RUNNER_SERVICE_ARN }}"
+
+      - name: Wait for deployment to finish
+        run: |
+          for i in $(seq 1 30); do
+            status=$(aws apprunner describe-service \
+              --service-arn "${{ vars.APP_RUNNER_SERVICE_ARN }}" \
+              --query "Service.Status" --output text)
+            echo "Status: $status"
+            if [ "$status" = "RUNNING" ]; then
+              echo "Deployment succeeded."
+              exit 0
+            fi
+            if [ "$status" = "CREATE_FAILED" ] || [ "$status" = "ROLLBACK_FAILED" ]; then
+              echo "Deployment failed."
+              exit 1
+            fi
+            sleep 20
+          done
+          echo "Timed out waiting for App Runner to report RUNNING."
+          exit 1

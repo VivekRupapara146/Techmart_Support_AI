@@ -1,0 +1,64 @@
+# Render Blueprint — the documented FALLBACK deployment target (see
+# DEPLOYMENT.md). AWS App Runner is the primary target (.github/workflows/
+# deploy.yml); this exists so the project isn't single-vendor-locked and
+# because Render's free tier makes it a genuinely zero-cost way to keep a
+# live demo link up between interviews.
+
+services:
+  - type: web
+    name: techmart-support-backend
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: APP_NAME
+        value: TechMart Support AI
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: JWT_EXPIRE_MINUTES
+        value: "60"
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB_NAME
+        value: techmart_support
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: RATE_LIMIT_DEFAULT
+        value: 60/minute
+      - key: ACTIVE_ROUTER
+        value: rule_based
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+      - key: DEMO_USERNAME
+        value: demo
+      - key: DEMO_PASSWORD_HASH
+        sync: false
+
+  - type: web
+    name: techmart-support-frontend
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      # Render can't auto-fill this with the backend's own URL in a static
+      # site build (no service-to-service URL interpolation for static
+      # publish paths) — set it manually in the dashboard after the backend
+      # first deploys, to e.g. https://techmart-support-backend.onrender.com/v1,
+      # then trigger a redeploy of this service. See DEPLOYMENT.md.
+      - key: VITE_API_BASE_URL
+        sync: false
+    routes:
+      # SPA fallback — React Router-style client-side routes (none exist
+      # today, but this is the standard safe default for a Vite SPA) all
+      # resolve to index.html instead of 404ing on refresh.
+      - type: rewrite
+        source: /*
+        destination: /index.html

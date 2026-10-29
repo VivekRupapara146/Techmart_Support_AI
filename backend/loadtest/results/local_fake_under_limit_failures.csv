@@ -1,0 +1,2 @@
+Method,Name,Error,Occurrences
+POST,/v1/chat,HTTPError('429 Client Error: Too Many Requests for url: /v1/chat'),71
